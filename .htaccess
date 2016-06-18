@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^hembow.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^beta.hembow.com$
+RewriteCond %{REQUEST_URI} !src/
+RewriteRule (.*) /src/$1 [L]
+
+ErrorDocument 400 /#/404
+
+#IndexIgnore *
+
+# 10 minutes
+Header set Cache-Control "max-age=600"
+# DONT CACHE
+# Header unset Cache-Control

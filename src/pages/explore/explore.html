@@ -1,0 +1,35 @@
+<div class="container explore-results">
+	<br />
+	<div class="">
+		<ul class="nav nav-tabs">
+
+			<li data-bind="css: {'active': activeTab() == 'browse-by-posts'}">
+				<a data-bind="attr: { href: postsUrl }">
+					<img src="images/svg/post.svg" onerror="this.onerror=null; this.src='images/svg/backup/post.png'" class="search-btn-icon" height="26" width="26">
+					<span>Posts</span>
+					
+				</a>
+			</li>
+
+			<li data-bind="css: {'active': activeTab() == 'browse-by-users'}">
+				<a data-bind="attr: { href: usersUrl }">
+					<img src="images/svg/user.svg" onerror="this.onerror=null; this.src='images/svg/backup/user.png'" class="search-btn-icon" height="26" width="26">
+					<span>Users</span>
+				</a>
+			</li>
+
+			<!-- <li data-bind="css: {'active': activeTab() == 'browse-by-groups'}">
+				<a data-bind="attr: { href: groupsUrl }">
+					<img src="images/svg/group.svg" onerror="this.onerror=null; this.src='images/svg/backup/group.png'" class="search-btn-icon" height="26" width="26">
+					<span>Groups</span>
+				</a>
+			</li>
+ -->
+		</ul>
+	</div>
+
+	<div class="clr"></div>
+
+	<div data-bind="component: { name: activeTab, params: { searchTerm: searchTerm } }"></div>
+
+</div>

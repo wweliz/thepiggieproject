@@ -1,0 +1,49 @@
+<div class="approve-users">
+
+	<!-- follower requests panel-->
+	<div class="panel panel-default">
+		<div class="panel-body">
+			
+			<div data-bind="if: followRequests().length >= 1">
+				<button class="btn btn-default" type="submit" style="float: right;" data-bind="click:expandCollapseFollowers">
+					<span data-bind="text:followerBtnText"></span>
+				</button>
+			
+				<h3>Pending Follower Requests</h3>
+
+				<div data-bind="foreach:followRequests, visible:followerReqVis">
+					<follower params="{follower: $data, followType: $parent.requestName}" class="col-md-4 col-sm-6 small-gutter"></follower>
+				</div>
+			</div>
+
+			<div data-bind="ifnot: followRequests().length >= 1">
+				<span>No Pending Follower Requests</span>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- member requests panel-->
+	<div class="panel panel-default">
+		<div class="panel-body">
+
+			<div data-bind="if: memberRequests().length >= 1">
+				<button class="btn btn-default" type="submit" style="float: right;" data-bind="click:expandCollapseMembers">
+					<span data-bind="text:memberBtnText"></span>
+				</button>
+			
+				<h3>Pending Member Requests</h3>
+
+				<div data-bind="foreach:memberRequests, visible:memberReqVis">
+					<member params="{member: $data}" class="col-md-4 col-sm-6 small-gutter"></member>
+				</div>
+			</div>
+
+			<div data-bind="ifnot: memberRequests().length >= 1">
+				<span>No Pending Member Requests</span>
+			</div>
+
+		</div>
+	</div>
+
+</div>

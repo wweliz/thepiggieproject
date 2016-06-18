@@ -1,0 +1,33 @@
+<title data-bind="pageTitle: profileTitle "></title>
+<div class="cover-wrapper visible-xl">
+	<div class="cover-blur" data-bind="style: { backgroundImage: coverPhotoURL }"></div>
+</div>
+
+<div class="user-profile container">
+
+	<!-- ko if: paramsReady -->
+		<!-- User Profile Navigation lives in user-info component -->
+		<user-info params="{ user: user, 
+			isCurrentUser: isCurrentUser, 
+			coverPhoto: coverPhoto,
+			coverPhotoURL: coverPhotoURL
+			 }" class="profile-header"></user-info>
+
+		<!-- Active page component is loaded dynamically based on route param -->
+        <div data-bind="css: { 'col-md-10': !mapView(), 'col-xs-12': mapView() }">
+		    <div data-bind="component: { name: activeTab, params: { mapView: mapView, user: user, isCurrentUser: isCurrentUser, userWeapons: userWeapons, hasWeapons: hasWeapons } }"></div>
+        </div>
+	<!-- /ko -->
+
+    <!-- ko if: !mapView() -->
+	<div class="sidebar col-sm-2 no-right-gutter hidden-sm hidden-xs">
+		<sidebar-action-items></sidebar-action-items>
+		<!-- ko if:showWeaponsPrompt -->
+			<a data-bind="attr: {href: weaponLink}">
+				<img src="/images/test-campaign/addWeapon_sidepromo_180x222.gif" class="img-responsive" style="margin-top: 15px;" /> 
+			</a>
+		<!-- /ko -->
+	</div>
+    <!-- /ko -->
+
+</div>

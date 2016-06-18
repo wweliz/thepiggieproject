@@ -1,0 +1,31 @@
+<!-- ko if:hasOptions() -->
+	<!-- ko if:label -->
+		<label class="input-label" data-bind="text:label"></label>
+	<!-- /ko -->
+	<div class="dropdown" >
+
+		<button class="btn btn-default dropdown-toggle" type="button" id="weapon-types" data-toggle="dropdown" aria-expanded="true">
+			<!-- ko if:hasDisplayText() -->
+				<span data-bind="text:selectedDisplayText"></span>
+			<!-- /ko -->
+			<!-- ko if:!hasDisplayText() -->
+				<span data-bind="text:selected()"></span>
+			<!-- /ko -->
+			<span class="caret"></span>
+		</button>
+
+		<ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="weapon-dropdown" data-bind="foreach:options">
+			<!-- ko if: $parent.hasDisplayText() -->
+				<li role="presentation"><a role="menuitem" tabindex="-1" data-bind="text:$data.displayText || $data.name, click:$parent.onClick"></a></li>
+			<!-- /ko -->
+			<!-- ko if: !$parent.hasDisplayText() -->
+				<li role="presentation"><a role="menuitem" tabindex="-1" data-bind="text:$data, click:$parent.onClick"></a></li>
+			<!-- /ko -->
+		</ul>
+
+	</div>
+
+	<!-- ko if:clearable -->
+		<button data-bind="click:clearSelection" class="btn btn-close" style="float:right"><span class="glyphicon glyphicon-remove"></span></button>
+	<!-- /ko -->
+<!-- /ko -->

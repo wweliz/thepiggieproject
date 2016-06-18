@@ -1,0 +1,38 @@
+/* heatmap STYLING */
+.heatmap {
+
+  .postDiv {
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    padding: 5px;
+    height: 500px;
+  }
+
+  .mapDiv {
+    width: 100%;
+    height: 500px;
+
+    #infoWindowBox {
+      max-width: 400px;
+      max-height: 400px;
+      word-wrap: break-word;
+      overflow-y: auto;
+    }
+
+    #infoWindowTitle {
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-bottom-color: grey;
+      margin-bottom: 3px;
+    }
+
+    div.postInfoLine {
+    }
+
+    span.infoWindowPostCaption {
+      font-size: 0.8em;
+    }
+
+  }
+}

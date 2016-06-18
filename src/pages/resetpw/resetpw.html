@@ -1,0 +1,39 @@
+<div class="forgotpw">
+
+	<title data-bind="pageTitle: 'Hembow | Forgot Password' "></title>
+	<div id="bg"> <img src="../../images/landingpage/Glacier494.jpg"></div>
+
+	<div class="access-panel container">
+		<div class="panelWrap">
+			<div class="inner-wrapper">
+
+				<div class="forgotpw text-center login">
+	
+				<h3 class="note">Create a New Password</h3>
+
+				<p>To access your account, please enter a new password. You will then be able to login as usual.</p>
+				<fieldset class="user-inputs">
+					<label class="regInput sr-only" for="password">Password</label>
+					<input id="password" name="password" placeholder="New Password" type="password" data-bind="value:password, valueUpdate:'afterkeydown', enterkey:submitRequest" required>
+
+					<label class="regInput sr-only" for="password" style="hidden" class="sr-only">Confirm Password</label>
+					<input id="conf_password" name="password" placeholder="Confirm Password" type="password" data-bind="value:confPassword, valueUpdate:'afterkeydown', enterkey:submitRequest" required>
+
+					<input id="botField" data-bind="value:botField" style="display: none;">
+				</fieldset>
+
+				<!-- ko if: alertMsg -->
+				<br />
+				<div class="alert alert-success" role="alert">
+					<p data-bind="text: alertMsg"></p>
+				</div>
+				
+				<!-- /ko -->
+				<br />
+				<button class="btn btn-primary" data-bind="click:submitRequest">Set new password</button>
+
+			</div>
+		</div>
+	</div>
+
+</div>

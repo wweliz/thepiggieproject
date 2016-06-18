@@ -1,0 +1,70 @@
+<!-- ko if: !postError() -->
+	<div class="detailed-post container"  data-bind="with:post">
+		<title data-bind="pageTitle: pageTitle"></title>
+
+		<div class="imgWrapper">
+			<img class="photoPhotoSingle img-responsive" data-bind="attr:{src: photos()[0].url}">
+			<div class="placeholder">
+				<img src="/images/placeholder.jpg" class="img-responsive" />
+			</div>
+		</div>
+
+		<caption-input params="caption: $data.caption"></caption-input>
+		<br>
+		<input-journal params="journal: $data.journalEntry"></input-journal>
+		<br>
+		<input-friends params="tags:$data.tagArray"></input-friends>
+		<br>
+
+		<ul class="location-time">
+
+			<li class="">
+				<input id="places-search-box" placeholder="Enter a location" autocomplete="off">
+			</li>
+
+			<li class=" text-right">
+				<bs-datetime params="dateTime: $parent.huntDateTime">
+					<div id="datetimepicker2" class="input-append">
+						<ul class="dateTimeList">
+							<li>
+								<input class="time-input" data-format="MM/dd/yyyy HH:mm PP" type="text" data-bind="value:dateTime">
+							</li>
+							<li>
+								<span class="add-on">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#535353" width="20" height="20">
+										<path fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M10,5H2C1.4,5,1,5.4,1,6v42  c0,0.6,0.4,1,1,1h46c0.6,0,1-0.4,1-1V6c0-0.6-0.4-1-1-1h-8"></path>
+										<line fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="36" y1="5" x2="14" y2="5"></line>
+										<path fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M37,1c-0.6,0-1,0.4-1,1v6  c0,0.6,0.4,1,1,1h2c0.6,0,1-0.4,1-1V2c0-0.6-0.4-1-1-1H37z"></path>
+										<path fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M11,1c-0.6,0-1,0.4-1,1v6  c0,0.6,0.4,1,1,1h2c0.6,0,1-0.4,1-1V2c0-0.6-0.4-1-1-1H11z"></path>
+										<line fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="1" y1="15" x2="49" y2="15"></line>
+										<polygon fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="7,22 43,22 43,43   30,43 7,43 "></polygon>
+										<line fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="7" y1="29" x2="43" y2="29"></line>
+										<line fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="7" y1="36" x2="43" y2="36"></line>
+										<line fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="25" y1="22" x2="25" y2="43"></line>
+										<line fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="16" y1="22" x2="16" y2="43"></line>
+										<line fill="none" stroke="#535353" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="34" y1="22" x2="34" y2="43"></line>
+									</svg>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</bs-datetime>
+			</li>
+
+		</ul>
+
+		<!-- <post-selector params="callback: $parent.setSpeciesList"></post-selector> -->
+		<!-- <pre data-bind="text: ko.toJSON($data)"></pre> -->
+	</div>
+<!-- /ko -->
+
+<!-- ko if: postError() -->
+	<title data-bind="pageTitle: errorPageTitle"></title>
+
+	<div class="container">
+		<div class="alert well text-center">
+			<h1>Oh no!</h1>
+			<p data-bind="text: errorMsg"></p>
+		</div>
+	</div>
+<!-- /ko -->

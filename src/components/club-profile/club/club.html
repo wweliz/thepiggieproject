@@ -1,0 +1,47 @@
+<div class="card club club-card" data-bind="with:club">
+	<a data-bind="attr:{ href: profileUrl }">
+		<img data-bind="attr:{src: coverPhoto}" alt="cover photo" class="img-responsive" />
+	</a>
+
+	<div class="row">
+		<div class="col-xs-4 text-center" >
+			<a data-bind="attr:{ href: profileUrl }" class="avatarWrapper">
+				<img class="avatar" data-bind="attr:{src: avatar}" alt="profile photo"/>
+			</a>
+		</div>
+
+		<div  class="col-xs-8">
+			<span data-bind="text:clubname"></span>
+		</div>
+	</div>
+	
+	<div class="row">
+		<!-- post and club counts -->
+		<div class="col-xs-6 text-center no-gutter" >
+			<ul class="club-specs">
+			
+				<li>
+					<i class="fa fa-camera"></i>
+					<!-- <span data-bind="text:postCount"></span> -->
+				</li>
+
+				<li>
+					<i class="fa fa-users"></i>
+					<span data-bind="text: $parent.memberCount"></span>
+				</li>
+
+				<li>
+					<i class="fa fa-users"></i>
+					<!-- <span data-bind="text:followerCount"></span> -->
+				</li>
+				
+			</ul>
+		</div>
+
+		<button class="btn btn-primary" data-bind="click:$parent.btnAction">
+			<span data-bind="text:$parent.btnText"></span>
+		</button>
+		
+	</div>
+
+</div>

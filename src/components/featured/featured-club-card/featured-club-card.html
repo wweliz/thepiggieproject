@@ -1,0 +1,55 @@
+<span>featured club card</span>
+
+<div data-bind="with:club" class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<!-- AVATAR -->
+			<!-- <div class="avWrapper col-sm-2 text-center">
+				<a data-bind="attr:{ href: profileUrl }" class="avatarWrapper" >
+					<img class="avatar" data-bind="attr:{src: avatar}">
+				</a>
+			</div> -->
+			
+			<div class="club-details col-sm-10 row">
+				<div class="col-sm-6">
+					<!-- USER INFO -->
+					<h2 data-bind="text:name"></h2>
+					<!-- <span class="location" data-bind="text:home"></span> -->
+				</div>
+				
+				<div class="col-sm-6 text-right">
+					<!-- USER COUNTS & FOLLOW -->
+					<div class="countWrapper">
+						<i class="fa fa-camera"></i>
+						<span class="countLabel">Posts</span>
+						<!-- <span data-bind="text: postCount"></span> -->
+						<span>52</span>
+					</div>
+
+					<div class="countWrapper">
+						<i class="fa fa-users"></i>
+						<span class="countLabel">Followers</span>
+						<!-- <span data-bind="text: followerCount"></span> -->
+						<span>63</span>
+					</div>
+
+					<div class="countWrapper">
+						<i class="fa fa-user"></i>
+						<span class="countLabel">Following</span>
+						<!-- <span data-bind="text:followingCount"></span> -->
+						<span>75</span>
+					</div>
+
+					<follow-button params="id: id, isPrivate: isPrivate, fullName: name"></follow-button>
+				</div>
+			</div>
+		</div>
+		<div >
+			<!-- <div data-bind="foreach: posts">		
+					<featured-post params="{post:$data}" class="col-xs-4 small-gutter"></featured-post>
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<div class="clr"></div>

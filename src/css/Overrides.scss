@@ -1,0 +1,46 @@
+// GLOBAL OVERRIDE CLASSES
+@media (min-width: 768px) { 
+	.no-gutter { padding: 0 !important; } 
+}
+@media (max-width: 767px) {
+	.xs-float {width: inherit; }
+}
+.no-gutter-sm { padding: 0 !important; }
+.no-left-gutter { padding-left: 0 !important; }
+.no-right-gutter { padding-right: 0 !important; }
+.small-gutter { 
+	padding: 5px; 
+	.row {
+		margin-right: -5px;
+		margin-left: -5px;
+	}
+}
+
+hr {
+	margin-top: 3px;
+	margin-bottom: 10px;
+}
+
+.clr, .clear {
+	height: 0;
+	clear: both;
+	display: block;
+}
+
+.btn-primary {
+	background-color: #5689b6 !important;
+	border-color: #497ca9 !important;
+}
+
+.btn-kalachi {
+	span {
+		color: #FFF;
+	}
+
+	&:hover span {
+		color: #FFF;
+	}
+	&:click span {
+		color: #FFF;
+	}
+}

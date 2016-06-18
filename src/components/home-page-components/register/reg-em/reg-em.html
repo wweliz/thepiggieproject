@@ -1,0 +1,34 @@
+<div class="reg-em text-center">
+	<div class="registration-panel">
+		<form autocomplete="off" class="order signup website" method="POST" novalidate="novalidate">
+			
+			<input name="_method" type="hidden" value="post">
+			<input name="checkbox_agreed_to_terms" type="hidden" value="on">
+			<input name="plan" type="hidden">
+			<!-- <div class="messages"></div> -->
+
+			<h3 class="note">or sign up with your email address</h3>
+
+			<fieldset class="user-inputs small-gutter">
+				<label class="regInput" for="email">Email</label>
+				<input id="email" name="email" placeholder="Email" type="email" data-bind="value:email, valueUpdate:'afterkeydown', enterkey:createAccountEmail" required>
+
+				<label class="regInput" for="username">Username</label>
+				<input id="username" name="username" placeholder="Username" type="email" data-bind="value:username, valueUpdate:'afterkeydown', event:{blur: checkUsernameUnique}" required>
+
+				<label class="regInput" for="password">Password</label>
+				<input id="password" name="password" placeholder="Password" type="password" data-bind="value:password, valueUpdate:'afterkeydown', enterkey:createAccountEmail" required>
+
+				<label class="regInput" for="password">Confirm Password</label>
+				<input id="conf_password" name="password" placeholder="Confirm Password" type="password" data-bind="value:confPassword, valueUpdate:'afterkeydown', enterkey:createAccountEmail" required>
+
+				<input id="botField" data-bind="value:botField">
+			</fieldset>
+
+			<div data-bind="text:alertMsg"></div>
+			
+			<button class="registerBtn btn btn-primary" id="signup-button" type="submit" data-bind="click:createAccountEmail">Register</button>
+
+		</form>
+	</div>
+</div>

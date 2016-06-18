@@ -1,0 +1,32 @@
+<div class="tag-user-card tag-weapon-card" data-bind="click:toggleSelection, css: cardCss">
+    <!-- ko if:selectable -->
+    <div class="add-or-remove">
+        <i class="fa" data-bind="css:css"></i>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko with:weapon -->
+            <!-- ko if: $parent.deleteWeapon -->
+                    <button class="btn btn-kalachi btn-xs btn-delete-weapon" data-bind="click: $parent.deleteWeaponPrompt">Delete</button>
+                <!-- /ko -->
+        <div  class="user-name-and-handle">
+
+                <!-- ko if: image && !$parent.selectable -->
+                <img class="weapon-img" data-bind="img:{src: mainImage}" height="35" width="35"/>
+               
+                <br /><br />
+                <!-- /ko -->
+
+            <span data-bind="text:shortDisplayText" class="full-name"></span>
+            <br />
+            <span data-bind="text:fullDisplayText" class="handle"></span>
+            <!-- ko foreach:additionalWeapons -->
+                <br />
+                <span>+&nbsp;<span data-bind="text:fullDisplayText" class="handle"></span></span>
+            <!-- /ko -->
+            <br>
+            
+        </div>
+    <!-- /ko -->
+
+</div>

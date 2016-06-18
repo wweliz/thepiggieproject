@@ -1,0 +1,22 @@
+<div class="create-comment row">
+		
+	<!-- <div class="col-sm-2 text-center hidden-xs">
+		<div class="avatarWrapper">
+			<img class="avatar" data-bind="attr:{src: avatar}">
+		</div>
+	</div> -->
+
+	<div class="col-sm-12">
+		<!--<h4>Leave your comment</h4>-->
+
+		<form data-bind="submit:postComment">
+				<textarea class="form-input " placeholder="Write a comment..." data-bind="textInput:comment"></textarea>
+				<button type="submit" class="btn btn-kalachi" id="postComment" >POST</button>
+		
+				<div class="alert alert-danger" data-bind="visible: alertMsg, text:alertMsg"></div>
+
+		</form>
+				
+	</div>
+
+</div>

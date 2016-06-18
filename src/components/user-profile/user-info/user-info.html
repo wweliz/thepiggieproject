@@ -1,0 +1,91 @@
+<div class="user-info">
+	<div class="profile-header" data-bind="with:user">
+		
+		<div class="cover">
+			<!-- ko if: $parent.isCurrentUser -->
+				<div class="cover-controls">
+					<button class="btn btn-kalachi btn-xs" data-bind="click:$parent.enableCoverPhotoDZ, visible:$parent.buttonViz">Update Cover Photo</button>
+				</div>
+			<!-- /ko -->
+
+			<!-- ko if: $parent.spinnerViz() -->
+			<div class="cover-spinner">
+				<div>Updating...</div>
+			</div>
+			<!-- /ko -->
+
+			<img class="img-responsive" data-bind="visible:$parent.coverViz, img:{src:$parent.coverPhoto}" alt="cover photo">
+
+			<div data-bind="if:$parent.dropzoneViz">
+				<dropzone-photo-uploader params="{id:'cover-dz',image:coverPhoto,cb:$parent.updateCoverPhoto, resultSize:{width:1140,height:297}}"></dropzone-photo-uploader>
+			</div>		
+		</div>
+
+		<!-- <div class="user-data"> -->
+			
+			<div class="col-sm-3 col-md-2 col-xs-3 text-center no-gutter xs-float avatar-wrapper">
+				<a id="userAvatar" class="avatarWrapper">
+					<img class="avatar" data-bind="attr:{src: avatar}" alt="profile photo"/>
+				</a>
+			</div>
+				
+			<div class="col-sm-9 col-md-5 col-xs-7 ">	
+				<h2 data-bind='text:name'></h2>
+				<span data-bind='text:handle' ></span><br/>
+
+				<!-- ko ifnot: $parent.isCurrentUser -->
+					<follow-button params="{id: id(), isPrivate: isPrivate() }"></follow-button>
+				<!-- /ko -->
+			</div>
+
+			<div class="clr visible-xs" style="background-color: red;"></div>
+		
+			<div class="col-sm-12 col-md-5 no-gutter profile-nav text-center">
+				<a class="btn info-nav-btn" data-bind="attr: { href: profileUrl }">
+					<img src="images/svg/post.svg" onerror="this.onerror=null; this.src='images/svg/backup/post.png'" class="svg-nav"><br>
+					<!-- <span data-bind="text:postCount"></span> -->
+					<span>Posts</span>
+				</a>
+
+				<!-- <a class="btn btn-default" data-bind="attr: { href: trophyUrl }">
+					<img src="images/svg/trophies.svg" onerror="this.onerror=null; this.src='images/svg/backup/trophies.png'" class="svg-nav"><br>
+					<span data-bind="text:trophyCount"></span>
+					<span>Trophies</span>
+				</a> -->
+
+
+				<!-- <a class="btn info-nav-btn" data-bind="attr: { href: clubsUrl }">
+					<img src="images/svg/group.svg" onerror="this.onerror=null; this.src='images/svg/backup/group.png'" class="svg-nav"><br>
+					<!-- <span data-bind="text:clubCount"></span> -->
+				<!--	<span>Clubs</span>
+				</a> -->
+
+
+				<a class="btn info-nav-btn" data-bind="attr: { href: likesUrl }">
+					<img src="images/svg/thumb_up_filled.svg" onerror="this.onerror=null; this.src='images/svg/backup/thumb_up_filled.png'" class="svg-nav"><br>
+					<!-- <span data-bind="text:likeCount"></span> -->
+					<span>Likes</span>
+				</a>
+
+				<a class="btn info-nav-btn" data-bind="attr: { href: followersUrl }">
+					<img src="images/svg/followers.svg" onerror="this.onerror=null; this.src='images/svg/backup/followers.png'" class="svg-nav"><br>
+					<!-- <span data-bind="text:followerCount"></span> -->
+					<span>Followers</span>
+				</a>	
+
+				<a class="btn info-nav-btn" data-bind="attr: { href: followingUrl }">
+					<img src="images/svg/user.svg" onerror="this.onerror=null; this.src='images/svg/backup/user.png'" class="svg-nav"><br>
+					<!-- <span data-bind="text:followingCount"></span> -->
+					<span>Following</span>
+				</a>
+
+				<a class="btn info-nav-btn" data-bind="attr: { href: gearUrl }">
+					<img src="images/svg/user-gear.svg" onerror="this.onerror=null; this.src='images/svg/backup/user-gear.png'" class="svg-nav"><br>
+					<span>Gear</span>
+				</a>
+			</div>
+
+		<div class="clr" ></div>
+		
+	</div>
+</div>

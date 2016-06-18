@@ -1,0 +1,205 @@
+/* PROMO CAMPAIGN STYLING */
+promo-campaign {
+	display: block;
+	overflow: hidden;
+}
+.promo-campaign { 
+	background-color: #CCCCCC;
+	transition: height 0.5s ease;
+	background: url(../../images/test-campaign/sunset-turkey.jpg) no-repeat center 17%;
+	background-size: cover;
+	text-align: center;
+
+	&.duck-campaign {
+		background: url(../../images/test-campaign/sunset-ducks.jpg) no-repeat center 17%;
+		background-size: cover;
+	}
+
+	.promo-spacer {
+		height: 5px;
+		display: block;
+	}
+
+	button { float: none;
+		margin-top:  -10px;
+		margin-left: 15px;
+	}
+
+	.buffer {
+		display: block;
+		height: 67px;
+		background-color:rgba(0, 0, 0, 0.5);
+	}
+
+	.container {
+		margin-top: -67px;
+	}
+
+	.topbar{
+		width: 200%;
+		margin-left: -50%;
+		height: 67px;
+		display: block;
+		
+	}
+
+	.promo-wrapper {
+		margin-left: auto;
+		margin-right: auto;
+		transition: all 0.8s ease;
+
+		.logline{
+			font-family: 'Dancing Script', cursive;
+			color: #fff;
+			font-size: 25px;
+			text-align: center;
+			margin-top: 30px;
+
+			.GObutton{
+				font-family: arial;
+				background-color: $kalachiRed;
+				border: none;
+				float: none;
+				margin-left: 20px;
+				height: 40px;
+			}
+		}
+	}
+
+	.promo-headline {
+		font-family: 'Dancing Script', cursive;
+		color: #f0ad4e;
+		.hd-1, .hd-2, .hd-3 {transition: all 0.8s ease;};
+	}
+
+	.photogroup {
+		margin-top: 45px;
+		margin-bottom: 50px;
+		ul {
+			list-style: none;
+			li.promoHunt {
+				.promo-info{
+					background-color: #fff;
+					height: 14px;
+
+					.promo-city{
+						float: left;
+						margin-left: 3px;
+						color: #666;
+						font-size: 10px;
+					}
+
+					.datestamp{
+						float: right;
+						margin-right: 3px;
+						color: #666;
+						font-size: 10px;
+
+					}
+				}
+				.promoPhoto {
+					.photoWrapper {
+					    display:flex;
+					    justify-content:center;
+					    align-items:center;
+					    overflow:hidden;
+					    height: 200px;
+					    border: 1px solid #fff;
+
+		 
+						img.promoPhoto {
+							   flex-shrink:0;
+							    min-width:100%;
+							    min-height:100%;
+
+						}
+					}
+				}
+			}
+		}
+
+		
+	}
+
+	.hd-1 { font-size: 2.3em };
+	.hd-2 { font-size: 2.3em };
+	.hd-3 { font-size: 2.3em };
+
+
+	&.collapsed {
+		height: 60px;
+		.promo-wrapper { max-width: 100% };
+	}
+
+	&.expanded {
+		height: 450px;
+		
+
+		// .hd-1 { font-size: 7em };
+		// .hd-2 { font-size: 5.5em };
+		// .hd-3 { font-size: 5.5em };
+
+		.promo-wrapper { max-width: 1170px; };
+	}
+
+
+}
+@media (max-width: 1200px) {
+	li.promoHunt:nth-child(4n) {
+		display: none;
+	}		
+}
+
+
+@media (max-width: 767px) {
+	.promo-campaign { 
+
+		.promo-headline {
+				font-family: 'Dancing Script', cursive;
+				color: #f0ad4e;
+				font-size: 10px;
+				line-height: 54px;
+		}
+
+		button { float: none;
+			margin-top:  -10px;;
+			margin-left: 15px;
+		}
+		
+		&.collapsed {
+		.promo-campaign { height: 50px; }
+		// 	.hd-1 { font-size: 1.7em };
+		// 	.hd-2 { font-size: 1.7em };
+		// 	.hd-3 { font-size: 1.7em };
+			}
+
+		&.expanded {
+			.promo-campaign { height: 100vh; }
+			// .hd-1 { font-size: 5em };
+			// .hd-2 { font-size: 4.5em };
+			// .hd-3 { font-size: 4.5em };
+
+			li.promoHunt:nth-child(3n) {
+				display: none;
+			}
+
+			
+
+			.logline{
+
+			font-size: 20px;
+
+
+				.GObutton{
+					font-family: arial;
+					font-size: 14px;
+					background-color: $kalachiRed;
+					border: none;
+					float: none;
+					margin-left: 30px;
+					height: 30px;
+				}
+			}	
+		}
+	}
+}

@@ -1,0 +1,9 @@
+<div data-bind="if:!isModal">
+    <img data-bind="img:{src:srcSVG, fallback:srcPNG}, click:showOptions, style:{height:height,width:width}">
+</div>
+
+<div data-bind="if:optionsVisible">
+    <div class="icon-selection-container" data-bind="foreach:options">
+        <img-with-callback params="value:$data,callback:$parent.value,height:$parent.height,width:$parent.width"></img-with-callback>
+    </div>
+</div>

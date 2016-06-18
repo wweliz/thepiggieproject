@@ -1,0 +1,64 @@
+<form role="search">
+	<div class="searchActiveWrapper" data-bind="css: {'active': searchHasFocus()}">
+
+		<input type="text" id="navSearchInput" data-bind="value:searchInput, hasFocus: inputHasFocus, attr: {placeholder: placeholderText}"
+		><button data-bind="click: searchBtnAction" class="btn btn-primary ">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#FFF" height="18" width="18">
+				<path d="M21,3C11.6,3,4,10.6,4,20s7.6,17,17,17s17-7.6,17-17S30.4,3,21,3z M21,33c-7.2,0-13-5.8-13-13c0-7.2,5.8-13,13-13  c7.2,0,13,5.8,13,13C34,27.2,28.2,33,21,33z" fill="#FFF"/>
+				<line fill="none" stroke="#FFF" stroke-width="6" stroke-miterlimit="10" x1="31.2" y1="31.2" x2="44.5" y2="44.5"/>
+			</svg>
+		</button>
+
+		<div data-bind="visible: searchHasFocus">
+			<ul class="nav nav-tabs" role="tablist">
+
+				<li role="presentation" data-bind="click: setQueryPosts, css: {'active': activePosts()" class="searchTab active" class="link">
+					<a role="tab" data-toggle="tab" class="link" >
+
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" width="16px" height="18px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#a6a6a6" class="link">
+						<rect fill="none" width="18" height="18"/>
+						<path d="M33,23c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S35.206,23,33,23z" />
+						<g fill="#a6a6a6">
+						<path d="M34.548,26.105l-7.239,3.617l-9.494-13.305c-0.179-0.25-0.462-0.404-0.77-0.418c-0.306-0.006-0.604,0.115-0.804,0.348   L7,27.156V39h36v-9.875l-7.634-3.053C35.104,25.966,34.805,25.979,34.548,26.105z" />
+						</g>
+						<path d="M0,4v42h50V4H0z M45,41H5V9h40V41z" />
+					</svg>
+						
+						<!-- <img src="images/svg/post.svg" onerror="this.onerror=null; this.src='images/svg/backup/post.png'" class="search-btn-icon" width="18px" > -->
+						<span class="hidden-xxs link">Posts</span>
+					</a>
+				</li>
+
+				<li role="presentation" data-bind="click: setQueryUsers, css: {'active': activeUsers" class="searchTab link">
+					<a  role="tab" data-toggle="tab" class="link">
+
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" class="link">
+						<g fill="#a6a6a6">
+						<path d="M34.8,33.8c-1.7-0.7-3.8-1.6-3.8-2.3V27c2.5-1.9,4-4.9,4-8v-6c0-5.5-4.5-10-10-10c-5.5,0-10,4.5-10,10v6c0,3.1,1.5,6.2,4,8  v4.5c0,0.6-2.1,1.5-3.8,2.3C11.1,35.5,5,38.1,5,45v1h40v-1C45,38.1,38.9,35.5,34.8,33.8z" />
+						</g>
+					</svg>
+						<!-- <img src="images/svg/user.svg" onerror="this.onerror=null; this.src='images/svg/backup/user.png'" class="search-btn-icon" width="18px" > -->
+						<span class="hidden-xxs" class="link">Users</span>
+					</a>
+				</li>
+
+
+				<!--<li role="presentation" data-bind="click: setQueryGroups, css: {'active': activeGroups" class="searchTab link ">
+					<a role="tab" data-toggle="tab" class="link">
+
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_2" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" class="link">
+					<g fill="#a6a6a6">
+					<path d="M29.645,31.073c-0.106-1.584-0.106-2.641-0.106-4.013c0.739-0.316,1.901-2.744,2.111-4.644c0.527,0,1.372-0.633,1.69-2.745  c0.105-1.162-0.318-1.9-0.739-2.005c1.688-2.111,1.372-10.768-4.856-10.768L26.899,5c-8.866,0-12.139,6.861-9.604,12.667  c-0.317,0.211-0.845,0.844-0.739,2.005c0.211,2.111,1.161,2.639,1.689,2.745c0.21,2.005,1.478,4.327,2.216,4.644  c0,1.372,0,2.534-0.105,4.013C18.738,35.32,8.398,34.335,7.071,41.95C7.013,42.283,7.332,43,8.016,43C13.79,43,41.092,43,42,43  c1.016,0,0.983-0.738,0.923-1.081C41.572,34.338,31.261,35.314,29.645,31.073z" fill="#a6a6a6"/>
+					<path d="M40.141,29.609c-0.108-1.18-0.103-1.074-0.103-2.252c0.536-0.322,1.503-2.142,1.609-3.644c0.43,0,1.073-0.429,1.288-2.142  c0.106-0.857-0.215-1.5-0.537-1.607c1.288-1.714,1.074-8.465-3.755-8.465L38,10c-0.958,0-2.086,0.071-3.158,0.241  c0.799,2.347,0.832,5.164,0.125,7.166c0.311,0.688,0.448,1.532,0.365,2.446l-0.006,0.059l-0.009,0.059  c-0.296,1.964-1.034,3.171-1.89,3.823c-0.323,1.351-0.967,3.044-1.889,4.143c0.004,0.86,0.019,1.637,0.077,2.628  c0.536,0.851,2.314,1.551,4.038,2.23c3.128,1.232,7.285,2.884,8.815,7.205c1.686,0,3.927,0,4.53,0c1,0,1-0.984,1-0.984  C50,31.281,41.428,33.145,40.141,29.609z" fill="#a6a6a6"/>
+					<path d="M14.346,32.795c1.725-0.68,3.505-1.381,4.04-2.232c0.057-0.928,0.071-1.73,0.075-2.604  c-0.951-1.084-1.664-2.777-2.007-4.217c-0.813-0.601-1.674-1.739-1.889-3.888c-0.093-1.019,0.115-1.87,0.464-2.535  c-0.792-2.465-0.732-5.037,0.134-7.309c-6.677,0.114-9.62,5.426-7.614,9.968c-0.213,0.106-0.64,0.641-0.533,1.601  c0.214,1.709,0.854,2.136,1.282,2.136c0.212,1.601,1.174,3.417,1.707,3.737c0,1.066,0,1.019-0.106,2.298C9.031,32.484,0,32.281,0,39  c0,0,0,1,1,1c0.606,0,2.851,0,4.529,0C7.057,35.679,11.215,34.028,14.346,32.795z" fill="#a6a6a6"/>
+					</g>
+					</svg>
+						<span class="hidden-xxs" class="link">Groups</span>
+					</a>
+				</li> -->
+
+			</ul>
+		</div>
+
+	</div>
+</form>

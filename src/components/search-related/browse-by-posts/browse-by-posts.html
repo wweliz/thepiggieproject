@@ -1,0 +1,18 @@
+<div class="search-results posts-search-results">
+
+	<title data-bind="pageTitle: 'Search Reults for Posts' "></title>
+
+	<div data-bind="ifnot:feedError">
+		<div class="row user-feed-container" data-bind="foreach: posts">
+			<post params="{post:$data}" class="col-md-4 col-sm-6 small-gutter"></post>
+		</div>
+	</div>
+
+	<div data-bind="if:feedError">
+		<div class="well text-center">
+			<h3>No Results Found</h3>
+			<span>We were unable to find any posts that match your search.</span>
+		</div>
+	</div>
+
+</div>

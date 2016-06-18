@@ -1,0 +1,15 @@
+<div class="input-friends">
+	<p>Select from the users you follow to tag them in your post. You can filter your users by name or username in the search field below.</p>
+	<div class="row friend-search">
+		<div class="col-xs-12 ">
+			<input type="text" name="assc-friends" id="friend-search-bar" placeholder="Filter Friends by Name or Username" data-bind="textInput:filter"/>
+		</div>
+	</div>
+
+	<div class="friend-row-wrapper">
+		<div class="row" data-bind="foreach:filteredList">
+			<tag-user-card params="user:$data, tags:$parent.tags"></tag-user-card>
+		</div>
+	</div>
+
+</div>

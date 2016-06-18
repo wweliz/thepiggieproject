@@ -1,0 +1,31 @@
+<h2>Followers</h2>
+<div data-bind="ifnot:feedError">
+	<div class="followees-container">
+
+		<div data-bind="if: currentUserAndPendingRequests()">
+			<div class="row alert alert-info">
+
+				<button class="btn btn-primary" type="submit" style="float: right;" data-bind="click:expandCollapse">
+					<span data-bind="text:pendingReqBtnText"></span>
+				</button>
+			
+				<h3>Your Pending Requests (<span data-bind="text:followRequests().length"></span>)</h3>
+
+				<div data-bind="foreach:followRequests, visible:reqVis">
+					<follower params="{follower: $data, followType: 'getFollowers', callback: $parent.updatePending }" class="col-md-4 col-sm-6 small-gutter"></follower>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row" data-bind="foreach: approvedFollowers">
+				<follower params="{follower: $data, followType: 'getFollowers'}" class="col-md-4 col-sm-6 small-gutter"></follower>
+		</div>
+
+	</div>
+</div>
+
+<div data-bind="if:feedError">
+	<span data-bind="if: $parent.id() != currentUserId()">This user does not have any followers.</span>
+	<span data-bind="if: $parent.id() == currentUserId()">You do not have any followers.</span>
+</div>

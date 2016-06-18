@@ -1,0 +1,17 @@
+<div class="need-location">
+
+	<h2>Oh no!</h2>
+	<p>Your location could not be automatically determined.</p>
+	<p>Would you like to enter your location manually?</p>
+
+	<div data-bind="if:yesNo">
+		<button class="btn btn-default" data-bind="click:showLocEntry">Yes - Input manually</button>
+		<button class="btn btn-default" data-dismiss="modal">No - Return to previous screen</button>
+	</div>
+
+	<div data-bind="if:enterLocation">
+		<input placeholder="City" data-bind="value:city">
+		<input placeholder="State" data-bind="value:state">
+	</div>
+
+</div>

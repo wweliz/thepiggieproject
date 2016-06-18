@@ -1,0 +1,68 @@
+// for successful-post.html
+
+.post-a-hunt{
+	.btn-kalachi{
+		margin: 5px;
+	}
+
+	.suctitle{ color: $kalachiRed;
+
+	}
+
+	post{
+		.user-info {
+			text-align: left;
+		}
+	}
+
+	.sucbuttons{ 
+
+			p{ color: #666;}
+		}
+
+	.sucline{
+		font-size: 22px;
+		color: $kalachiRed;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.post-a-hunt{
+
+		.sucpost{ max-width: 350px;
+			margin-right: auto;
+			margin-left: auto;
+
+			post {
+				.ribbon{
+					position: relative;
+					float: right;
+				}
+
+				
+			}
+
+		}
+
+			.sucbuttons{ 
+			margin-top: 8%;
+			display: inline-block;
+
+		}
+					
+
+	}
+
+
+}
+
+@media (min-width: 768px) {
+
+	.post-a-hunt{
+
+		.sucbuttons{ 
+			margin-top: 16%;
+		}
+	}
+}

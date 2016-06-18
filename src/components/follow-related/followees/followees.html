@@ -1,0 +1,34 @@
+<div class="followees-container">
+
+	<!-- PENDING REQUESTS - ONLY SHOWS FOR FOLLOWERS -->
+	<!-- ko if: (requestName == "getFollowers" && followRequests().length > 0) -->
+		<div class="row alert alert-info">
+			<button class="btn btn-default" type="submit" style="float: right;" data-bind="click:expandCollapse">
+				<span data-bind="text:pendingReqBtnText"></span>
+			</button>
+		
+			<h3>Your Pending Requests (<span data-bind="text:followRequests().length"></span>)</h3>
+
+			<div data-bind="foreach:followRequests, visible:reqVis">
+				<follower params="{follower: $data, followType: $parent.requestName}" class="col-md-4 col-sm-6 small-gutter"></follower>
+			</div>
+		</div>
+	<!-- /ko -->
+
+	<!-- DISPLAYS USER'S FOLLOWERS OR THOSE A USER IS FOLLOWING -->
+	<div class="row">
+		<button class="filter-feed text-right btn btn-default" style="float: right;">
+			<span>Filter</span>
+			<i class="fa fa-filter"></i>
+		</button>
+
+		<h3 data-bind="text: pageTitle"></h3>
+
+		<div data-bind="foreach: allFollowers">
+			<!-- FOLLOWER/FOLLOWING CARD -->
+			<follower params="{follower: $data, followType: $parent.requestName}" class="col-md-4 col-sm-6 small-gutter"></follower>
+		</div>
+
+	</div>
+
+</div>

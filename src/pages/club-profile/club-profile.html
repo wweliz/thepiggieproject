@@ -1,0 +1,16 @@
+<title data-bind="pageTitle: clubName"></title>
+
+<div class="club-profile container">
+	<!-- Club Profile Navigation lives in club-info component -->
+	<club-info params="{ club: club, currentUserIsAdmin: currentUserIsAdmin, currentUserIsMember: currentUserIsMember }" class="profile-header"></club-info>
+
+	<!-- Active page component is loaded dynamically based on route param -->
+	<!-- ko if: clubParamsReady && memberParamsReady -->
+		<div class="col-md-10 no-gutter" data-bind="component: { name: activeTab, params: { club: club, currentUserIsAdmin: currentUserIsAdmin, currentUserIsMember: currentUserIsMember, acceptedMemberArray: acceptedMembers, memberError: memberError } }"></div>
+	<!-- /ko -->
+
+	<div class="sidebar col-sm-2 no-right-gutter hidden-sm hidden-xs">
+		<sidebar-action-items></sidebar-action-items>
+	</div>
+
+</div>

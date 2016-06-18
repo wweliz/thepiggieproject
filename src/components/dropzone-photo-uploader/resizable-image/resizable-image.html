@@ -1,0 +1,14 @@
+<div class="dz-overlay">
+    <div class="dz-resize-container" data-bind="event:{'mousedown':startMoving, 'touchstart':startMoving, 'mousewheel':resize}">
+        <img class="dz-resize-image" alt="Image" data-bind="attr:{src:image}"/>
+    </div>
+    <div class="dz-overlay-inner">
+    </div>
+</div>
+<div id="dz-image-buttons" class="text-center">
+    <button class="btn btn-default" data-bind="click:manualZoomIn">Zoom In</button>
+    <button class="btn btn-default" data-bind="click:manualZoomOut">Zoom Out</button>
+    <button class="btn btn-primary" data-bind="click:rotate">Rotate</button>
+    <button class="btn btn-success" data-bind="click:crop">Accept</button>
+    <button class="btn btn-danger" data-bind="click:clear" data-dz-remove>Clear</button>
+</div>

@@ -1,0 +1,15 @@
+/* PHOTO CAROUSEL STYLING -- styling overrides Bootstrap standard styling */
+.photo-carousel	{
+	.carousel-inner > .item > img { width: 100%; } // image should fill carousel container
+
+	.carousel-control {
+		width: 85%; // positions the carousel control arrows horizontally 
+		&.left, &.right { background-image: none; } // removes carousel control default gradient
+		
+		// positions the carousel control arrows vertically
+		.glyphicon-chevron-right, .glyphicon-chevron-left {
+			position: absolute;
+			top: 90%;
+		}
+	}
+}

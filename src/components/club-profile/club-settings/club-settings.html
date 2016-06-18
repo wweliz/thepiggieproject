@@ -1,0 +1,33 @@
+<div class="club-settings">
+
+	<h1>Invite Users</h1>
+	<invite-users params="club:clubId"></invite-users>
+
+	<h1>Approve Users</h1>
+	<approve-users params="club:clubId"></approve-users>
+
+	<h1>Update Group Type</h1>
+	<fieldset>
+		<input type="radio" name="open" data-bind="checked:groupType, checkedValue:'open'">
+		<label for="open">Open</label>
+
+		<input type="radio" name="follow" data-bind="checked:groupType, checkedValue:'follow'">
+		<label for="follow">Follow</label>
+
+		<input type="radio" name="request" data-bind="checked:groupType, checkedValue:'request'">
+		<label for="request">Request</label>
+
+		<input type="radio" name="private" data-bind="checked:groupType, checkedValue:'private'">
+		<label for="private">Private</label>
+	</fieldset>
+
+	<div data-bind="text:groupTypeMsg"></div>
+
+	<div data-bind="text:alertMsg"></div>
+
+	<button class="btn btn-primary" data-bind="click:updateClubType">Update Group Type</button>
+
+	<h1>Disable Club</h1>
+	<disable-club params="club:clubId"></disable-club>
+
+</div>

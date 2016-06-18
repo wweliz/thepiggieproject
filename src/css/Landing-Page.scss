@@ -1,0 +1,195 @@
+/* LANDING PAGE STYLING */
+.landing-page {
+	#botField { display: none; }
+
+	.login-button, .register-button {
+		position: absolute;
+		z-index: 1;
+		right: 30px;
+		top: 10px;
+	}
+
+	.bg-cover {
+		min-height: 538px;
+		z-index: 0;
+		background: url(../../images/bg-fox.jpg) no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		position: inherit !important;
+	}
+
+	h3 { font-size: 1.2em; text-align: center; }
+
+	.introText {
+		font-weight: 300;
+		color: white;
+		font-size: 36px;
+		z-index: 27;
+		text-shadow: 1px 1px 1px #000;
+		text-align: center;
+	}
+
+	.access-panel {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+
+		.panelWrap {
+			position: relative;
+			background: rgba(255, 255, 255, 0.8);
+			border: 1px solid #fff;
+			height: 468px;
+			border-bottom: 3px solid orange;
+			padding: 40px;
+		}
+
+		.registerBtn, .loginBtn {
+			margin-top: 20px;
+			width: 100%;
+		}
+
+		.register, .login {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			input { width: 100%; }
+
+			a.fb-button {
+				background-color: $facebook-color;
+				border-color: $facebook-color;
+				color: #fff;
+				text-shadow: none;
+				width: 100%;
+
+				// once the font awesome icons have been deleted, this class should be changed/deleted
+				.fa-facebook {
+					margin-right: 10px;
+					border: 1px solid #fff;
+					padding: 3px;
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+			a.tw-button {
+				background-color: $twitter-color;
+				border-color: $twitter-color;
+				color: #fff;
+				margin-bottom: 20px;
+				padding-left: 40px;
+				text-shadow: none;
+				width: 100%;
+			}
+		}
+
+		.fb { border-color: $facebook-color; color: $facebook-color; }
+		.tw { border-color: $twitter-color; color: $twitter-color; }
+		.email { border-color: $email-color; color: $email-color; }
+
+		.registration-panel {
+			input { width: 100%; }
+			h3 { font-size: 1.2em; }
+
+			.regInput {
+				position: absolute !important;
+				clip: rect(0, 0, 0, 0);
+				width: 1px !important;
+				height: 1px !important;
+				padding: 0 !important;
+				margin: -1px !important;
+				overflow: hidden;
+				border: 0;
+			}
+		}
+
+		input { margin: 4px 0; }
+		.login a.fb-button { margin-bottom: 20px; }
+	}
+
+	section#welcome-features, section#welcome-pricing { background-color: #ccc; }
+
+	section#welcome-features {
+		.feature-promo {
+			.feature-headline2 { font-size: 5em; }
+			.feature-bracket {
+				font-size: 7em;
+				display: block;
+				-ms-transform: rotate(90deg); /* IE 9 */
+				-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+				transform: rotate(90deg);
+				display: inline-block;
+				transform:scale(2,1) rotate(90deg); /* W3C */
+				-webkit-transform:scale(2,1) rotate(90deg); /* Safari and Chrome */
+				-moz-transform:scale(2,1) rotate(90deg); /* Firefox */
+				-ms-transform:scale(2,1) rotate(90deg); /* IE 9 */
+				-o-transform:scale(2,1) rotate(90deg); /* Opera */
+			}
+		}
+	}
+
+
+	section#welcome-about {
+		background-color: #fff;
+		text-align: center;
+
+		.about-wrap {
+			max-width: 1170px;
+			background-color: #fff;
+			text-align: left;
+		
+			.about-left {
+				background-color: #fff;
+				float: left;
+
+				.about-left-text {
+					margin-left: auto;
+					margin-right: auto;
+					width: 80%;
+					margin-top: 10%;
+					text-align: left;
+					background-color: #fff;
+				}
+			}
+
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.landing-page {
+		.access-panel {
+			h2 { font-size: 28px; }
+			.panelWrap { padding: 10px; }
+		}
+	}
+}
+
+section#welcome-corporateinfo, .corporate-footer {
+		background-color: $kalachiRed;
+		a { 
+			padding-top: 10px;
+			float: right;
+			font-size: 11pt;
+			color: #fff; 
+			padding-right: 20px;
+
+			&:hover { color: #fff;}
+
+			&.logolink{
+				display: inline-block;
+				float: left;
+				padding: 10px 0 6px 10px;
+				img { height:25px; }
+			}
+
+
+		}
+}
+.corporate-footer-text{
+				color: #fff;
+				float: right;
+				line-height: 40px;
+			}

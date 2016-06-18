@@ -1,0 +1,14 @@
+<div class="club-members">
+
+	<button class="filter-feed text-right btn btn-default">
+		<span>Filter</span>
+		<i class="fa fa-filter"></i>
+	</button>
+
+	<div class="row" data-bind="foreach: acceptedMembers">
+		<member params="{member:$data}" class="col-md-4 col-sm-6 small-gutter"></member>
+	</div>
+
+	<span data-bind="if: memberError">This club currently has no members.</span>
+
+</div>

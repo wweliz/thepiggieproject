@@ -1,0 +1,11 @@
+<div class="btn-group" data-toggle="buttons">
+    <!-- ko if:label -->
+        <label class="input-label" data-bind="text:label"></label>
+    <!-- /ko -->
+    <!-- ko foreach:options -->
+        <label class="btn btn-default" data-bind="click:$parent.selection,css:{'active':$index() == 0}">
+            <input type="radio" autocomplete="off" data-bind="value:$data,attr:{name:$parent.name}">
+            <span data-bind="text:$data.name || $data"></span>
+        </label>
+    <!-- /ko -->
+</div>

@@ -1,0 +1,20 @@
+<div class="user-weapons">
+		
+		<h2>user-weapons</h2>
+
+		<div data-bind="ifnot:feedError">
+			<ul data-bind="foreach: weapons">
+				<li class="col-sm-4">
+						<span data-bind="text:id"></span>
+						<div data-bind="if:photo">
+							<img data-bind="attr:{src: photo}">
+						</div>
+				</li>
+			</ul>
+		</div>
+
+		<div data-bind="if:feedError">
+			<span>This user has not added any weapons yet.</span>
+		</div>
+
+</div>

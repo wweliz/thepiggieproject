@@ -1,0 +1,643 @@
+//GLOBAL VARIABLES
+$navBarBg: #dddddd;
+$kalachiRed: #c11f21;
+$brown-light: #f3efea;
+$brown-dark: #1c1710;
+$brown-text: #4e3e2a;
+$dark-bg: #080808;
+$facebook-color: #3b5998;
+$twitter-color: #55acee;
+$email-color: #db4437;
+$dim: #56514f;
+
+$big-game: #B72227;
+$small-game: #B72227;
+$waterfowl: #F05A28;
+$upland-bird: #F05A28;
+$freshwater: #204A67;
+$saltwater: #204A67;
+$reptile: #2A6350;
+$scenic: #8A5D3B;
+$trailcam: #474444;
+
+@import '404';
+@import 'navigation';
+@import 'Cards';
+@import 'Detailed-Post';
+@import 'Dropzone';
+@import 'Explore';
+@import 'Featured';
+@import 'Feed-Post';
+@import 'Follower';
+@import 'fonts/font-awesome';
+@import 'ForgotPassword';
+@import 'Groups';
+@import 'Heatmap';
+@import 'Landing-Page';
+@import 'CorporateInfo';
+@import 'Notification';
+@import 'Notifications';
+@import 'Photo-Carousel';
+@import 'Preview-Post';
+@import 'Post-A-Hunt';
+@import 'Promo-Campaign';
+@import 'styles-responsive';
+@import 'Trophy';
+@import 'Typography';
+@import 'Update-User';
+@import 'User-Profile';
+@import 'Overrides';
+@import 'Form-Components-Custom';
+@import 'Search-User-Card';
+@import 'Bs-Datetime';
+@import 'Successful-Post';
+
+.noNav #page { margin-bottom: 0; }
+
+input { padding: 5px !important; }
+
+textarea {
+	overflow: auto;
+	max-width: 525px; //best column width for readability
+}
+
+.btn-kalachi {
+	background-color: $kalachiRed;
+	color: #fff;
+
+	&:hover { color: $navBarBg; }
+}
+
+body { background-color: $brown-light; }
+
+.page-wrapper{
+	margin-top: 50px;
+	&.noNav { margin-top: 0px; }
+}
+
+.page { padding-top: 15px; }
+
+#logoWrapper {
+	background-color: $kalachiRed;
+	color: #ffffff;
+	width: 65px;
+	height: 58px;
+	z-index: 998;
+	position: absolute;
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+	margin-bottom: -37px;
+	top: 0;
+	transition: top 300ms;
+		
+	.logo {
+		fill: #fff;
+		width: 100%;
+		&:hover { fill: $navBarBg; }
+	}
+}
+
+@media (max-width: 767px) {
+	#logoWrapper {
+		margin-left: 0;
+		width: 55px;
+		height: 50px;
+	}
+}
+
+@media (max-width: 575px) {
+	#logoWrapper {
+		margin-left: 0;
+		width: 55px;
+		height: 50px;
+	}
+}
+
+//GLOBAL AVATAR STYLING
+
+.avatarWrapper{
+	border-radius: 50%;
+	overflow: hidden;
+	display: block;
+	background-color: #eee;
+
+	.avatar {
+		max-height: 100%;
+		margin: 0 auto;
+	}
+}
+
+//INFORMATIONAL CALLOUTS (As seen on User Settings Page)
+.bs-callout {
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+	background-color: #fff;
+		
+	.bs-callout+.bs-callout { margin-top: -5px; }
+	&.bs-callout-info { border-left-color: #1b809e; }
+	&.bs-callout-info h4 { color: #1b809e; }
+}
+
+.post .social { border-top: 1px solid #ccc; }
+
+.social {
+	color: #999;
+	font-size: 1.1em;
+
+	
+
+	.comments, .likes { 
+		display: inline-block;
+		margin: 0 3px;
+
+		//span { font-size: .8em; }
+		&:hover { color: #666; }
+	}
+
+	.truncate {
+		// width: 250px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.create-comment {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.breathingRoom {
+	display: block;
+	height: 30vh;
+}
+
+// TODO: need to set default width for googlemap
+
+.post-geolocation {
+	.conditions img {
+		display: block;
+		height: 60px;
+	}
+
+	.recent-locations .btn {
+		text-align: center;
+		img { height: 40px; }
+	}
+}
+
+.scrollable-menu {
+	height: auto;
+	max-height: 200px;
+	overflow-x: hidden;
+}
+
+/* SIDEBAR */
+.sidebar { 
+  float: right; 
+  display: block; 
+  margin-top: 40px;
+  img{
+     box-shadow: 2px 2px 2px #888888; }
+
+}     
+
+/* TOOLTIP STYLING */
+.tooltip-hb	{
+	position:absolute;
+	padding:10px;
+	border:1px solid #ccc;
+	border-radius:1em;
+	background-color:rgba(0,255,255,.8);
+}
+
+//MODAL STYLING
+.modal {
+	top: 70px;
+	.modal-header .close { margin-top: -10px; }
+	.buttonWrapper { padding: 5px; }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+/*  clubs tab */
+div.clubs-tab-container{
+	z-index: 10;
+	background-color: #ffffff;
+	padding: 0 !important;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	border:1px solid #ddd;
+	margin-top: 20px;
+	margin-left: 50px;
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	-moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	background-clip: padding-box;
+	opacity: 0.97;
+	filter: alpha(opacity=97);
+}
+
+div.clubs-tab-menu{
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 0;
+}
+
+div.clubs-tab-menu div.list-group{
+	margin-bottom: 0;
+}
+
+div.clubs-tab-menu div.list-group>a{
+	margin-bottom: 0;
+}
+
+div.clubs-tab-menu div.list-group>a .glyphicon,
+div.clubs-tab-menu div.list-group>a .fa {
+	color: #5A55A3;
+}
+
+div.clubs-tab-menu div.list-group>a:first-child{
+	border-top-right-radius: 0;
+	-moz-border-top-right-radius: 0;
+}
+
+div.clubs-tab-menu div.list-group>a:last-child{
+	border-bottom-right-radius: 0;
+	-moz-border-bottom-right-radius: 0;
+}
+
+div.clubs-tab-menu div.list-group>a.active,
+div.clubs-tab-menu div.list-group>a.active .glyphicon,
+div.clubs-tab-menu div.list-group>a.active .fa{
+	background-color: #5A55A3;
+	background-image: #5A55A3;
+	color: #ffffff;
+}
+
+div.clubs-tab-menu div.list-group>a.active:after{
+	content: '';
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	margin-top: -13px;
+	border-left: 0;
+	border-bottom: 13px solid transparent;
+	border-top: 13px solid transparent;
+	border-left: 10px solid #5A55A3;
+}
+
+div.clubs-tab-content{
+	background-color: #ffffff;
+	/* border: 1px solid #eeeeee; */
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+div.clubs-tab div.clubs-tab-content:not(.active){
+	display: none;
+}
+
+.link {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* PATRICK'S DROPZONE STUFF. MOVE WHERE YOU WANT IT AND EDIT HOWEVER YOU'D LIKE */
+
+.cropper-img-container {
+  overflow:hidden;
+  z-index: 999;
+  height: auto;
+  border: solid 2px rgba(50,50,50,.9);
+  width:100%;
+  box-sizing: content-box;
+}
+
+#dropzone {
+  height: 100%;
+  width: 100%;
+  border: 1px dashed #c0c0c0;
+}
+
+#dropzone-container {
+  height:250px;
+  width:250px;
+  text-align:center;
+  margin:auto;
+}
+
+  .user-info #dropzone-container {
+    width: 95%;
+  }
+
+#dropzone-container .btn {
+  margin-top:10px;
+}
+
+#dz-image-buttons {
+  margin: 10px auto 10px auto;
+  position: relative;
+  z-index: 100;
+}
+
+/* END PATRICK'S DROPZONE STUFF */
+
+/* CROPPER */
+
+/*!
+ * Cropper v1.0.0
+ * https://github.com/fengyuanchen/cropper
+ *
+ * Copyright (c) 2014-2015 Fengyuan Chen and contributors
+ * Released under the MIT license
+ *
+ * Date: 2015-10-10T02:10:06.999Z
+ */
+.cropper-container {
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  direction: ltr !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+.cropper-container img {
+  display: block;
+  width: 100%;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 100%;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  image-orientation: 0deg !important;
+}
+
+.cropper-canvas,
+.cropper-drag-box,
+.cropper-crop-box,
+.cropper-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cropper-drag-box {
+  background-color: #fff;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.cropper-modal {
+  background-color: #000;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.cropper-view-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 1px solid #39f;
+  outline-color: rgba(51, 153, 255, .75);
+}
+
+.cropper-dashed {
+  position: absolute;
+  display: block;
+  filter: alpha(opacity=50);
+  border: 0 dashed #eee;
+  opacity: .5;
+}
+.cropper-dashed.dashed-h {
+  top: 33.33333%;
+  left: 0;
+  width: 100%;
+  height: 33.33333%;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+.cropper-dashed.dashed-v {
+  top: 0;
+  left: 33.33333%;
+  width: 33.33333%;
+  height: 100%;
+  border-right-width: 1px;
+  border-left-width: 1px;
+}
+
+.cropper-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  filter: alpha(opacity=75);
+  opacity: .75;
+}
+.cropper-center:before,
+.cropper-center:after {
+  position: absolute;
+  display: block;
+  content: " ";
+  background-color: #eee;
+}
+.cropper-center:before {
+  top: 0;
+  left: -3px;
+  width: 7px;
+  height: 1px;
+}
+.cropper-center:after {
+  top: -3px;
+  left: 0;
+  width: 1px;
+  height: 7px;
+}
+
+.cropper-face,
+.cropper-line,
+.cropper-point {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: alpha(opacity=10);
+  opacity: .1;
+}
+
+.cropper-face {
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.cropper-line {
+  background-color: #39f;
+}
+.cropper-line.line-e {
+  top: 0;
+  right: -3px;
+  width: 5px;
+  cursor: e-resize;
+}
+.cropper-line.line-n {
+  top: -3px;
+  left: 0;
+  height: 5px;
+  cursor: n-resize;
+}
+.cropper-line.line-w {
+  top: 0;
+  left: -3px;
+  width: 5px;
+  cursor: w-resize;
+}
+.cropper-line.line-s {
+  bottom: -3px;
+  left: 0;
+  height: 5px;
+  cursor: s-resize;
+}
+
+.cropper-point {
+  width: 5px;
+  height: 5px;
+  background-color: #39f;
+  filter: alpha(opacity=75);
+  opacity: .75;
+}
+.cropper-point.point-e {
+  top: 50%;
+  right: -3px;
+  margin-top: -3px;
+  cursor: e-resize;
+}
+.cropper-point.point-n {
+  top: -3px;
+  left: 50%;
+  margin-left: -3px;
+  cursor: n-resize;
+}
+.cropper-point.point-w {
+  top: 50%;
+  left: -3px;
+  margin-top: -3px;
+  cursor: w-resize;
+}
+.cropper-point.point-s {
+  bottom: -3px;
+  left: 50%;
+  margin-left: -3px;
+  cursor: s-resize;
+}
+.cropper-point.point-ne {
+  top: -3px;
+  right: -3px;
+  cursor: ne-resize;
+}
+.cropper-point.point-nw {
+  top: -3px;
+  left: -3px;
+  cursor: nw-resize;
+}
+.cropper-point.point-sw {
+  bottom: -3px;
+  left: -3px;
+  cursor: sw-resize;
+}
+.cropper-point.point-se {
+  right: -3px;
+  bottom: -3px;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.cropper-point.point-se:before {
+  position: absolute;
+  right: -50%;
+  bottom: -50%;
+  display: block;
+  width: 200%;
+  height: 200%;
+  content: " ";
+  background-color: #39f;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .cropper-point.point-se {
+	width: 15px;
+	height: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .cropper-point.point-se {
+	width: 10px;
+	height: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .cropper-point.point-se {
+	width: 5px;
+	height: 5px;
+	filter: alpha(opacity=75);
+	opacity: .75;
+  }
+}
+
+.cropper-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+
+.cropper-invisible {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.cropper-hide {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.cropper-hidden {
+  display: none !important;
+}
+
+.cropper-move {
+  cursor: move;
+}
+
+.cropper-crop {
+  cursor: crosshair;
+}
+
+.cropper-disabled .cropper-drag-box,
+.cropper-disabled .cropper-face,
+.cropper-disabled .cropper-line,
+.cropper-disabled .cropper-point {
+  cursor: not-allowed;
+}
+
+/* END CROPPER */

@@ -1,0 +1,40 @@
+/* NOTIFICATION STYLING */
+.notice {
+	position: fixed;
+	left: 1em;
+	right: 1em;
+	box-sizing: border-box;
+	padding: 1em;
+	background: #fff;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, .25);
+	
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	
+	li {
+		position: relative;
+		margin-bottom: .5em;
+		&:last-of-type { margin-bottom: none; }
+	}
+	
+	.close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		text-decoration: none;
+		background: #aaa;
+		color: #fff;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		border-radius: 50%;
+		font-weight: 100;
+		font-size: 12px;
+		&:hover { background: #a00; }
+	}
+}

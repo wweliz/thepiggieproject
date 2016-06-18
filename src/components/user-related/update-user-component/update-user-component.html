@@ -1,0 +1,73 @@
+<div class="update-user-wrapper text-center">
+	<img class="avatar link" data-bind="attr:{src: avatar}, click:updateAvatar, visible:avatarViz" alt="profile photo"/>
+
+	<div class="avatar-dz-wrapper" data-bind="if:dropzoneViz">
+		<button class="cancelAvatar btn btn-warning" data-bind="click: cancelUpdateAvatar" style="float:right"><i class="fa fa-close"></i></button>
+		<dropzone-photo-uploader params="{id:'avatar-dz',image:avatar,cb:sendRequestWithImage, outputSize:{width:150,height:150}, circle:true, height:'180px',width:'180px'}">
+		</dropzone-photo-uploader>
+	</div><br>
+
+	<label data-bind="text:dzInstructions"></label>
+	<br>
+
+	<div id="blur-wrapper">
+		<hr>
+
+		<div class="row">
+			<label for="username" class="col-xs-4 text-right">Username</label>
+
+			<div class="col-cs-8 text-left">
+				<input type="text" id="username" placeholder="Username" data-bind="value:username, enable:enableTextInput">
+				<button class="btn btn-primary" tabindex="-1" aria-hidden="true" data-bind="click:clearUsernameInput, enable:enableTextInput"><i class="fa fa-close"></i></button>
+			</div>
+
+			<span data-bind='visible:username.hasError, text:username.validationMessage'></span>
+			<span data-bind="text:usernameMsg"></span>
+			<br>
+		</div>
+		
+		<div data-bind="css: {error: firstName.hasError}" class="row">
+			<label for="firstName" class="col-xs-4 text-right">*First Name</label>
+			
+			<div class="col-cs-8 text-left">
+				<input type="text" id="firstName" placeholder="First Name" data-bind="value: firstName, enable: enableTextInput"><br>
+			</div>
+			
+			<span data-bind='visible:firstName.hasError, text:firstName.validationMessage'></span>
+			<br>
+		</div>
+		
+		<div data-bind="css: {error: lastName.hasError}" class="row">
+			<label for="lastName" class="col-xs-4 text-right">*Last Name</label>
+			
+			<div class="col-cs-8 text-left">
+				<input type="text" id="lastName" placeholder="Last Name" data-bind="value: lastName, enable: enableTextInput">
+			</div>
+
+			<span data-bind='visible:lastName.hasError, text:lastName.validationMessage'></span>
+			<br>
+		</div>
+		
+		<div class="row">
+			<label for="email" class="col-xs-4 text-right">Email</label>
+
+			<div class="col-cs-8 text-left">
+				<input type="email" id="email" placeholder="Email" data-bind="value:email, enable:enableTextInput"><br>
+			</div>
+
+			<span data-bind='visible:email.hasError, text:email.validationMessage'></span>
+			<span data-bind="text:emailMsg"></span>
+			<br>
+		</div>
+
+	<div>
+		<hr>
+		<button class="btn btn-primary" data-bind="click:updateUser, enable:enableTextInput, text:submitBtn"></button>
+		<br>
+		<div class="alert alert-success alert-dismissible" role="alert" data-bind="visible:updateSuccess">
+		  <button type="button" class="close" aria-label="Close" data-bind="click:successDismiss"><span aria-hidden="true">&times;</span></button>
+		  <strong>Your profile has been updated successfully.</strong> 
+		</div>
+		<div class="clr"></div>
+	</div>
+</div>

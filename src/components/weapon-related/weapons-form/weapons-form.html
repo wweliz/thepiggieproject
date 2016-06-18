@@ -1,0 +1,20 @@
+<selected-weapon params="weapon:selectedWeapon"></selected-weapon>
+<!-- ko if: !selectedWeapon().userWeaponId && state() != 'create-new-weapon-form' && (!userWeapons() || userWeapons().length == 0 ) -->
+	<div class="bs-callout bs-callout-info">
+		<h3>Add your weapons</h3>
+		<p><strong>It appears you have not added any weapons to Hembow yet!</strong></p>
+		<p>Get started by selecting "New Weapon." You will be able to select from weapons within our database, or enter a custom weapon of your choice.</p>
+	</div>
+<!-- /ko -->
+<div class="weapons-form" data-bind="component:{name:state, params:{
+                                                                weapons:weapons,
+                                                                weapon:weapon,
+                                                                finalOptionText:'New Weapon',
+                                                                finalOptionCallback:createNewWeapon,
+                                                                removeWeapon:removeWeapon,
+                                                                userWeapons:userWeapons,
+                                                                state:state,
+                                                                returnToStart:returnToStart,
+                                                                selectedWeapon:selectedWeapon}}">
+
+</div>

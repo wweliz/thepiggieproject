@@ -1,0 +1,70 @@
+<div class="post-geolocation">
+
+	<h2>Location</h2>
+
+	<input class="input-location" placeholder="Hunt Location">
+
+	<div class="row">
+
+		<div class="conditions col-xs-6">
+			<h4>Conditions</h4>
+
+			<img class="weather-icon" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_WZy7f9Ct_XYRzYyFVGyFpIA8scOLMepIsL5CTfPMoT2J0LfTfg">
+			<span class="current-temp">current&deg;</span><br>
+
+			<span><span class="low-temp">low&deg;</span> | <span class="high-temp">high&deg;</span></span>
+		</div>
+
+		<div class="settings col-xs-6">
+			<h4>Settings</h4>
+
+			<div class="btn btn-default">Show Exact Location</div>
+			<div class="btn btn-default">Show General Location</div>
+		</div>
+
+	</div>
+
+	<div class="recent-locations">
+		<h4>Recent Locations</h4>
+		
+		<button class="btn btn-default recent-loc-1" >
+			<span class="city">city name</span><br>
+			<span class="state">state name</span><br>
+			<img class="weather-icon" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_WZy7f9Ct_XYRzYyFVGyFpIA8scOLMepIsL5CTfPMoT2J0LfTfg">
+			<span class="temp"></span>
+		</button>
+
+		<button class="btn btn-default recent-loc-1" >
+			<span class="city">city name</span><br>
+			<span class="state">state name</span><br>
+			<img class="weather-icon" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_WZy7f9Ct_XYRzYyFVGyFpIA8scOLMepIsL5CTfPMoT2J0LfTfg">
+			<span class="temp"></span>
+		</button>
+
+		<button class="btn btn-default recent-loc-1" >
+			<span class="city">city name</span><br>
+			<span class="state">state name</span><br>
+			<img class="weather-icon" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_WZy7f9Ct_XYRzYyFVGyFpIA8scOLMepIsL5CTfPMoT2J0LfTfg">
+			<span class="temp"></span>
+		</button>
+
+		<button class="btn btn-default recent-loc-1" >
+			<span class="city">city name</span><br>
+			<span class="state">state name</span><br>
+			<img class="weather-icon" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_WZy7f9Ct_XYRzYyFVGyFpIA8scOLMepIsL5CTfPMoT2J0LfTfg">
+			<span class="temp"></span>
+		</button>
+
+	</div>
+
+	<button class="btn btn-default" data-bind="click:myLocation">Get Location</button>
+
+	<button class="btn btn-default" data-bind="click:showNeedLocation">Show Need Location</button>
+
+	<div data-bind="if:NeedLocation">
+		<need-location></need-location>
+	</div>
+
+	<button class="btn btn-default" data-bind="click:submitLocationData">Submit</button>
+
+</div>

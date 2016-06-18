@@ -1,0 +1,22 @@
+ <div id="weaponconfirm" data-bind="with:weapon">
+
+    <!-- ko if: userWeaponId() -->
+    	    <span class="weapon-selected" >Selected</span>
+    	    <br />
+
+	    <div class="weapon-pre">
+	    	<!-- ko if: image -->
+	    		<img class="weapon-img" data-bind="img:{src: mainImage}" height="35" width="35"/>
+	    	<!-- /ko -->
+	    	<div  class="user-name-and-handle">
+	            <h3 data-bind="text:shortDisplayText" class="full-name"></h3>
+	            <span data-bind="text:series()" class="handle"></span>
+	            <!-- ko foreach:additionalWeapons -->
+	                <br />
+	                <span>+&nbsp;<span data-bind="text:fullDisplayText" class="handle"></span></span>
+	            <!-- /ko -->
+	            <br>
+	        </div>
+	    </div>
+    <!-- /ko -->
+</div>

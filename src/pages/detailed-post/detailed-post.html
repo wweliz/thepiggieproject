@@ -1,0 +1,221 @@
+<!-- ko if: !postError() -->
+	<div class="detailed-post container"  data-bind="with:post">
+		<title data-bind="pageTitle: pageTitle"></title>
+
+		<div class="postHeader">
+				<!-- User Avatar -->
+				
+				<h1 data-bind="text: postTitle" ></h1>
+				<h4 data-bind="if:city && state">
+					<!-- ko if: city || state -->
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#535353">
+							<rect fill="none" width="50" height="50"/>
+							<path d="M25,1C16.178,1,9,8.178,9,17c0,14.114,14.625,30.949,15.248,31.659C24.438,48.876,24.712,49,25,49  c0.31-0.021,0.567-0.127,0.757-0.347C26.38,47.931,41,30.813,41,17C41,8.178,33.822,1,25,1z M25,24c-3.313,0-6-2.687-6-6  s2.687-6,6-6s6,2.687,6,6S28.313,24,25,24z" fill="#535353"/>
+						</svg>
+						<span><span data-bind="text:city"></span>, <span data-bind="text:state"></span></span>
+						<span class="linebreak">|</span>
+					<!-- /ko -->
+					<span data-bind="if:humanFriendlyTime">
+						<span data-bind="text:humanFriendlyTime"></span>
+					</span>
+				</h4>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-7">
+				<div class="imgWrapper">
+					
+					<img src="/images/placeholder.jpg" class="photoPhotoSingle img-responsive" data-bind="attr:{src: photos()[0].url}">
+					<!-- <photo-carousel class="" params="{photos:photos}"></photo-carousel> -->
+					
+				</div>
+			</div>
+
+
+			<div class="col-sm-5 col-xs-12 pull-right white detailsRight"> <!-- start right panels -->
+				<div class="likes detailedpostlike">
+					<button class="btn btn-kalachi detailedpostlikebutton" data-bind="click: $parent.likeOrUnlike">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" data-bind="visible: !$parent.currentUserLike()">
+							<path fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="  M22.4,20c0,0,3.5-7.8,4-9.2C26.7,10,27,9.5,27,8.6C27,6,25.1,5,24,5c-0.8,0-1.7,0.5-2.3,1.5L10.5,21.9c-1,1.4-1.5,3-1.5,4.7V36  c0,4.4,3.6,8,8,8c0,0,17,0,19,0c2.5,0,4-2,4-3.3c0-1.5-0.7-2.5-0.7-2.5s2.7-1,2.7-3.4c0-2.1-2-2.9-2-2.9s2-1.1,2-3.2  c0-2.3-2.3-3.1-2.3-3.1s0.3-1.7,0.3-2.7c0-1.3-1.3-2.8-3.6-2.8C33,20,22.4,20,22.4,20z"></path>
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 40" enable-background="new 0 0 50 50" xml:space="preserve" data-bind="visible: $parent.currentUserLike()">
+							<path d="M36,45H17c-4.962,0-9-4.037-9-9v-9.4c0-1.938,0.567-3.714,1.687-5.281L20.892,5.912C21.588,4.742,22.769,4,24,4  c1.661,0,4,1.427,4,4.6c0,0.908-0.248,1.518-0.488,2.108c-0.057,0.139-0.116,0.285-0.175,0.442  c-0.375,1.051-2.357,5.524-3.395,7.851c3.076,0.004,9.896,0.023,12.488,0.099h0.001c2.85,0,4.569,1.932,4.569,3.799  c0,0.642-0.107,1.516-0.197,2.131C41.685,25.556,43,26.678,43,28.7c0,1.404-0.674,2.446-1.324,3.126  C42.337,32.433,43,33.392,43,34.8c0,2.007-1.382,3.225-2.372,3.84C40.823,39.163,41,39.866,41,40.7C41,42.496,39.098,45,36,45z" fill="#FFF"></path>
+						</svg>
+
+						<span data-bind="visible: !$parent.currentUserLike()"> Like </span>
+						<span data-bind="visible: $parent.currentUserLike()"> Unlike </span>
+
+						<span data-bind="if: $parent.likesCount() != 0">
+							(<span class="likes-count" data-bind="text: $parent.likesCount"></span>)
+						</span>
+					</button>
+				</div>
+					
+				<a class="profileLink" data-bind="attr:{href: profileLink}">
+					<div data-bind="if:avatar">
+						<div class="avatarWrapper avatarleft">
+							<img class="avatar detailedpostavatar" data-bind="attr:{src: avatar}">
+						</div>
+					</div>
+				</a>
+				<div class="detailedpostuserinfo">
+					<span class="detailedpostname" data-bind="text: name"></span>
+					<br />
+					<h4 class="detailedpostusername"><a class="profileLink " data-bind="{attr:{href: profileLink}, text:username}">
+					</a></h4>
+					<!-- ko if: tagArray().length > 0 -->
+						<span>With: </span>
+						<!-- ko foreach: { data: tagArray, as: 'tag' } -->
+							<span class="user-tag">
+								<a data-bind="attr: {href: '#/profile/'+tag.user.id}">
+									<span data-bind="text: tag.user.username"></span>
+									<!-- ko if: ($parent.tagArray().length - 1) > $index() -->
+										<span>,</span>
+									<!-- /ko -->
+								</a>
+							</span>
+						<!-- /ko -->
+
+					<!-- /ko -->
+				</div>
+				<br />
+				<!-- end user info -->
+				<div class="detailed-caption" data-bind="if:caption">
+					<span data-bind="text:caption"></span>		
+				</div> 
+				<div class="clr"></div>
+				<!-- this is caption -->
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<!-- ko if: critters -->
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingTwo">
+							  <h4 class="">
+							    
+							      Post Information
+							    
+							  </h4>
+							</div>
+							<div id="collapseTwo" class="">
+							  <div class="panel-body">
+							    <div class="row">
+							    	<div class="col-xs-3">
+							    		
+							    		<img data-bind="attr:{src: postTypeIcon}">
+							    	</div>
+							    	<div class="col-xs-9">
+							    		<!-- ko if: !postNonData() -->
+							    		<div class="speciesBox" data-bind="foreach: critters">
+							    			<critter-detail params="critter: $data"></critter-detail>
+										</div>
+										<!-- /ko -->
+							    	</div>
+
+							    </div>
+							  </div>
+							</div>
+						</div>
+					<!-- /ko -->
+					<!-- ko if: hasLocation -->
+						<div class="panel panel-default">
+
+						    <div class="panel-heading" role="tab" id="headingOne">
+						      <h4 class="panel-title">
+						        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						       		<i class="fa fa-map-marker"></i>
+									<span><span data-bind="text:city"></span>, <span data-bind="text:state"></span></span>
+						        </a>
+						      </h4>
+						    </div>
+
+							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									<div data-bind="if: $parent.coordsValid()">
+										<div class="googlemap" data-bind="map:coordinates"></div>
+									</div>
+									<!-- ko if: weather() -->
+										<h3>Weather Details</h3>
+										<weather-details params="details: weather, editable: false"></weather-details>
+									<!-- /ko -->
+								</div>
+							</div>
+						</div>
+					<!-- /ko -->
+					<!-- ko if: weapon -->
+						<div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingFour">
+						      <h4 class="panel-title">
+						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						          Weapon
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+						      <div class="panel-body">
+						        <div class="row">
+
+						        	<div>
+							        	
+							        	<div class="col-xs-9">
+											
+											<span data-bind="text: weaponDetail"></span>
+
+											
+							        	</div>
+
+						        	</div>
+
+						        </div>
+
+
+						      </div>
+						    </div>
+						</div>
+					<!-- /ko -->
+				  	<!-- ko if: journalEntry -->
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingThree">
+								<h4 class="panel-title">
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										Journal
+									</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								<div class="panel-body">
+								<div data-bind="if:journalSnippet">
+									<p data-bind="text:journalEntry"></p>
+								</div>
+								</div>
+							</div>
+						</div>
+					<!-- /ko -->
+				</div>
+				<!-- ko if: isCurrentUser() -->
+					
+					<a class='detailedpostuserlink' data-bind="click: $parent.deletePostPrompt"><span>Delete this post</span></a>
+				<!-- /ko -->
+			</div>
+
+			<div class="col-sm-7 col-md-7 col-xs-12">
+				<a name="#comments"></a>
+				<comments-feed params="huntId: id, huntUserId: userId" class="comment-feed"></comments-feed>
+				<div class="tallSpacer"></div>
+			</div>
+		</div>
+
+		<div class="breathingRoom"></div>
+
+	</div>
+<!-- /ko -->
+
+<!-- ko if: postError() -->
+	<title data-bind="pageTitle: errorPageTitle"></title>
+
+	<div class="container">
+		<div class="alert well text-center">
+			<h1>Oops! No longer available</h1> 
+			<p>The post you are looking for has been deleted by its owner.</p>
+		</div>
+	</div>
+
+<!-- /ko -->

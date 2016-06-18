@@ -1,0 +1,55 @@
+<title data-bind="pageTitle: 'My Notifications || Hembow' "></title>
+
+<div class="container">
+	<div class="notification-page col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+
+		<h2>
+			All Notifications
+			<span style="float:right">
+				<!-- ko if: noticeCount() > 0 -->
+				<a data-bind="click: clearNotifications" class="btn btn-default link">Clear All</a>
+				<!--/ko -->
+				<!-- ko if: !toggleRefreshSVG() -->
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#535353" height="30" width="30" data-bind="click: getNotifications" >
+						<polyline fill="none" stroke="#535353" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" points="7,10 16,10 16,19   "/>
+						<path fill="none" stroke="#535353" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M25,8c9.4,0,17,7.6,17,17  c0,9.4-7.6,17-17,17S8,34.4,8,25c0-5,2.2-9.5,5.6-12.6c0.7-0.6,1.4-1.2,2.2-1.7"/>
+					</svg>
+				<!-- /ko -->
+
+				<!-- ko if: toggleRefreshSVG() -->
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#535353" height="30" width="30">
+						<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="25" cy="25" r="5"/>
+						<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="41" cy="25" r="5"/>
+						<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="9" cy="25" r="5"/>
+					</svg>
+				<!-- /ko -->
+
+				<!-- screenreader only -->
+				<div class="sr-only">
+					<button data-bind="click: getNotifications">Refresh</button>
+				</div>
+			</span>	
+		</h2>
+		<div data-bind="visible: deleteText()" class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<strong>Your Viewed Notifications have been cleared!</strong> Any new notifications will appear below. 
+		</div>
+
+		<div class="well">
+			<!-- ko if: noticeCount() < 1 -->
+				<div class="alert">You do not have any notifications.</div>
+			<!-- /ko -->
+
+			<!-- ko if: noticeCount() > 0 -->
+				<ul class="notificationList" data-bind="foreach: { data: notificationArray, as: 'note' }">
+					<li>
+						<notifications params="note: note"></notifications>
+					</li>
+				</ul>
+			<!-- /ko -->
+		</div>
+
+	</div>
+</div>

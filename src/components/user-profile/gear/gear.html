@@ -1,0 +1,53 @@
+<div class="user-gear">
+<h2 data-bind="text: headerTitle"></h2>
+<error-handler params="message: alertText, clearMessage: clearAlert, css: alertClass"></error-handler>
+
+<!-- ko if: hasWeapons -->
+	<!--ko if: state() != 'create-new-weapon-form'-->
+		<button class="btn btn-primary" data-bind="click: createNewWeapon">Add New Weapon</button>
+	<!-- /ko -->
+	<br />
+	<div class="weapons-form" data-bind="component:{name:state, params:{
+                                                                weapons:weapons,
+                                                                weapon:weapon,
+                                                                finalOptionText:'New Weapon',
+                                                                finalOptionCallback:createNewWeapon,
+                                                                removeWeapon:removeWeapon,
+                                                                userWeapons:userWeapons,
+                                                                state:state,
+                                                                returnToStart:returnToStart,
+                                                                selectedWeapon:selectedWeapon,
+                                                                alertText: alertText,
+                                                                alertClass: alertClass
+
+                                                            }}">
+
+	</div>
+<!-- /ko -->
+<!-- ko if: !hasWeapons() -->
+	<div class="no-weapons-found">
+		<!-- ko if: isCurrentUser() -->
+			<div class="create-weapon-prompt well alert alert-info text-center">
+				<h3 class="text-center">You Currently Do Not Have Any Weapons or Gear</h3>
+				<p class="text-center"><strong>You can begin by adding your first weapon.</strong> You may chose from a selection of manufactures and models that are available through Hembow, or add your own custom weapon. We are continually adding to our database of firearms, bows, rods and reels.</p>
+				<br />
+				<button class="btn btn-kalachi" data-bind="click: createNewWeapon">Add New Weapon</button>
+			</div>
+		<!-- /ko -->
+		<!-- ko if: !isCurrentUser() -->
+			<div class="user-no-weapons well">
+				<div class="create-post-container text-center">
+					<h3 class="text-center">This user currently does not have any Weapons or Gear</h3>
+					<div>
+						<p class="descriptor">Check back later to see when new items are added.</p>
+					</div>
+				</div>
+
+			</div>
+		<!-- /ko -->
+	</div>
+<!-- /ko -->
+
+
+</div><!-- end user-gear -->
+

@@ -1,0 +1,207 @@
+<div class="navbar">
+
+	<!-- LEFT NAV - LOGO & SEARCH FIELD -->
+	<div class="nav-left">
+		<logo-badge></logo-badge>
+
+		<explore-search-bar></explore-search-bar>
+	</div>
+
+	<!-- RIGHT NAV -->
+	<div class="nav-right">
+		<ul class="nav-right-menu">
+			
+			<!-- POST BUTTON -->
+			<li class="navPost hidden-xs">
+				<a class="postbutton" href="#/post-a-hunt/create">
+					<svg viewBox="-104 196 402 402"><path d="M290 350.2c-5.3-5.3-11.8-8-19.4-8H151.8V223.4c0-7.6-2.7-14.1-8-19.4 -5.3-5.3-11.8-8-19.4-8H69.6c-7.6 0-14.1 2.7-19.4 8s-8 11.8-8 19.4v118.8H-76.6c-7.6 0-14.1 2.7-19.4 8 -5.3 5.3-8 11.8-8 19.4v54.8c0 7.6 2.7 14.1 8 19.4 5.3 5.3 11.8 8 19.4 8H42.2v118.8c0 7.6 2.7 14.1 8 19.4 5.3 5.3 11.8 8 19.4 8h54.8c7.6 0 14.1-2.7 19.4-8 5.3-5.3 8-11.8 8-19.4V451.8h118.8c7.6 0 14.1-2.7 19.4-8 5.3-5.3 8-11.8 8-19.4v-54.8C298 362 295.3 355.5 290 350.2z"/></svg>
+					<span>Post</span>
+				</a>
+			</li>
+
+			<!-- AVATAR -->
+			<li class="navUser hidden-xs">
+				<div data-bind="click: openProfile" class="profileLink link">
+					<div class="avatarWrapper">
+						<img class="avatar" data-bind="attr:{src: avatar}"/>
+					</div>
+					<span class="name hidden-sm hidden-xs" data-bind="text: name"></span>
+				</div>
+			</li>
+
+			<li class="split"></li>
+			
+			<!-- DROPDOWN NAVIGATION PANEL -->
+			<li class="dropNav">
+
+				<!-- HAMBURGER ICON AND NOTIFICATION COUNT -->
+				<a href="#" class="dropdown-toggle dropNavBtn" type="button" id="nav-dropdown" data-toggle="dropdown" aria-expanded="true">
+					<i class="fa fa-bars"></i>
+					<!-- ko if: unreadCount() > 0 -->
+					<span class="navAlertCount badge" data-bind="text: unreadCount()"></span>
+					<!-- /ko -->
+				</a>
+
+				<div class="navPanel dropdown-menu" role="navigation" aria-labelledby="nav-dropdown" aria-expanded="true">
+					
+					<div class="dropheader">
+						
+						<div class="dropNavUser">
+							<div data-bind="click: openProfile" class="link" id="navProfileLink">
+								<div class="avatarWrapper">
+									<img class="avatar" data-bind="attr:{src: avatar}"/>
+								</div>
+								<span class="name" data-bind="text: name"></span>
+							</div>
+						</div>
+
+						<!-- CLOSE NAVIGATION PANEL -->
+						<button type="button" class="close dropClose" data-dismiss="dropdown-menu" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
+				
+					</div>
+
+					<div class="clr"></div>
+
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-tabs" role="tablist">
+
+				    <li role="presentation" id="navigateTab" class="active"><a href="#navigate" aria-controls="navigate" role="tab">NAVIGATE</a></li>
+
+				    <li id="alertsTab" role="presentation" data-bind="click: markReadOnServer">
+				    	<a href="#notifications" aria-controls="profile" role="tab">
+				    		<span>NOTIFICATIONS</span>
+				    		<!-- ko if: unreadCount() > 0 -->
+							<span class="navAlertCount badge" data-bind="text: unreadCount()"></span>
+							<!-- /ko -->
+				    	</a>
+				    </li>
+
+				  </ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						
+						<div role="tabpanel" class="navigate tab-pane active" id="navigate">
+							<ul>
+								
+								<li>
+									<a href="#" class="nav-link">
+										<img src="images/svg/dog_house_filled.svg" onerror="this.onerror=null; this.src='images/svg/backup/dog_house_filled.png'" class="svg-nav"><br>
+										<span>HOME</span>
+									</a>
+								</li>
+
+								<li data-bind="css: { active: route().page === 'post-a-hunt' }">
+									<a href="#/post-a-hunt/create" class="nav-link">
+										<img src="images/svg/post.svg" onerror="this.onerror=null; this.src='images/svg/backup/post.png'" class="svg-nav"><br>
+										<span>POST</span>
+									</a>
+								</li>
+
+								<!-- <li>
+									<a data-bind="attr: { href: userClubsURL }" class="nav-link">
+										<img src="images/svg/group.svg" onerror="this.onerror=null; this.src='images/svg/backup/group.png'" class="svg-nav"><br>
+										<span>GROUPS</span>
+									</a>
+								</li> -->
+
+								<!-- <li>
+									<a data-bind="attr: { href: userHeatmapURL }" class="nav-link">
+										<img src="images/svg/insights.svg" onerror="this.onerror=null; this.src='images/svg/backup/insights.png'" class="svg-nav">
+										<br>
+										<span>INSIGHTS</span>
+									</a>
+								</li> -->
+
+								<li>
+									<a data-bind="attr: { href: userGearURL }" class="nav-link">
+										<img src="images/svg/user-gear.svg" onerror="this.onerror=null; this.src='images/svg/backup/user-gear.png'" class="svg-nav">
+										<br>
+										<span>GEAR</span>
+									</a>
+								</li>
+
+								<li data-bind="css: { active: route().page === 'profile' }">
+									<a href="#/profile" class="nav-link">
+										<img src="images/svg/user.svg" onerror="this.onerror=null; this.src='images/svg/backup/user.png'" class="svg-nav"><br>
+										<span>PROFILE</span>
+									</a>
+								</li>
+
+							</ul>
+						</div>
+
+						<div role="tabpanel" class="alerts tab-pane" id="notifications">
+							<!-- ko if: noticeCount() < 1 -->
+							<div class="alert">YOU CURRENTLY DO NOT HAVE ANY NOTIFICATIONS</div>
+							<!-- /ko -->
+							<!-- ko if: noticeCount() > 0 -->
+								<ul class="notificationList" data-bind="foreach: { data: firstFive, as: 'note' }">
+									<li> 
+										<notifications params="note: note"></notifications>
+									</li>
+								    	
+								</ul>
+								<ul class="notificationNav">
+									<li>
+										<a id="allNotifications" href="#/notifications">
+											<button class="btn btn-default">View all</button>
+										</a>
+									</li>
+									<li class="notificationRefresh">
+										<!-- ko if: !toggleRefreshSVG() -->
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#535353" height="30" width="30" data-bind="click: getNotifications" >
+												<polyline fill="none" stroke="#535353" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" points="7,10 16,10 16,19   "/>
+												<path fill="none" stroke="#535353" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M25,8c9.4,0,17,7.6,17,17  c0,9.4-7.6,17-17,17S8,34.4,8,25c0-5,2.2-9.5,5.6-12.6c0.7-0.6,1.4-1.2,2.2-1.7"/>
+											</svg>
+										<!-- /ko -->
+										<!-- ko if: toggleRefreshSVG() -->
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#535353" height="30" width="30">
+												<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="25" cy="25" r="5"/>
+												<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="41" cy="25" r="5"/>
+												<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="9" cy="25" r="5"/>
+											</svg>
+										<!-- /ko -->
+										<div class="sr-only">
+											<button data-bind="click: getNotifications">Refresh</button>
+										</div>	
+									<li>
+								</ul>
+							<!-- /ko -->
+
+
+							
+						</div>
+
+					</div>
+
+					<!-- <div class="clr"></div>
+					<div class="spacer"></div> -->
+			
+					<!-- SETTINGS & LOGOUT -->
+					<div class="dropfooter">
+						<div class="row">
+							
+							<div class="settingsBtn col-xs-6">
+								<a href="#/settings" class="nav-link">
+									<i class="fa fa-gear"></i>
+									<span>SETTINGS</span>
+								</a>
+							</div>
+
+							<div class="navLogoutBtn col-xs-6" data-bind="css: { active: route().page === 'login' }, click:logout">
+								<a href="#/login" class="nav-link">LOG OUT</a>
+							</div>
+
+						</div>
+
+						<!-- <div class="spacer"></div> -->
+						<!-- <div class="dropAdvert col-xs-12">Ad Goes Here</div> -->
+					</div>
+					
+				</div>
+			</li>
+		</ul>
+		
+	</div>
+</div>

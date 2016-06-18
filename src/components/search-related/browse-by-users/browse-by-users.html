@@ -1,0 +1,18 @@
+<div class="search-results user-search-results">
+
+	<title data-bind="pageTitle: 'Search Reults for Users' "></title>
+	
+	<div data-bind="ifnot:feedError">
+		<div class="row" data-bind="foreach: { data: userArray, as: 'user' }">
+			<follower params="{follower: user, followType: 'getFollowers'}" class="col-md-4 col-sm-6 small-gutter"></follower>
+		</div>
+	</div>
+
+	<div data-bind="if:feedError">
+		<div class="well text-center">
+			<h3>No Results Found</h3>
+			<span>We were unable to find any users that match your search.</span>
+		</div>
+	</div>
+
+</div>

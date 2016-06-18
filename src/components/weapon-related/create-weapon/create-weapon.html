@@ -1,0 +1,34 @@
+<div class="create-weapon">
+
+	<h4>Store Your Gun</h4>
+
+	<!-- weapon type dropdown -->
+	<dropdown params="{selected:selectedType,options:types}"></dropdown>
+ 	<!-- <select data-bind="options: types, optionsText: 'name', selectedOptions: selectedType"></select> -->
+
+	<!-- weapon manufacturer dropdown -->
+ 	<!-- <select data-bind="options: manufacturers, optionsText: 'name', selectedOptions: selectedManufacturer"></select> -->	
+	<dropdown params="{selected:selectedManufacturer,options:manufacturers, clearable:true}"></dropdown>
+
+	<!-- weapon model dropdown -->
+ 	<!-- <select data-bind="options: models, optionsText: 'name'"></select> -->	
+	<dropdown params="{selected:selectedModel,options:models}"></dropdown>
+
+	<!-- model dropdown menu -->
+	<label for="model">Model</label>
+	<input type="text" id="model" data-bind="textinput:model" />
+
+	<!-- year manufactured dropdown -->
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="year-dropdown" data-toggle="dropdown" aria-expanded="true">
+			<span data-bind="text:yearSelection"></span>
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="year-dropdown" data-bind="foreach:year">
+			<li role="presentation"><a role="menuitem" tabindex="-1" data-bind="text:$data, click:$parent.yearSelection"></a></li>
+		</ul>
+	</div>
+
+	<button class="btn btn-warning" data-bind="click:saveUserWeapon">Save this shit</button>
+
+</div>

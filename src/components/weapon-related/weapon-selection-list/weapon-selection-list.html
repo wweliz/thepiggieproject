@@ -1,0 +1,25 @@
+<div class="weapons-list">
+     <!-- ko if:!noButton -->
+		<div class='new-weapon-button-wrapper'>
+        	<button class="btn btn-primary new-weapon" data-bind="click:finalOptionCallback, text:finalOptionText"></button>
+		</div>
+    <!-- /ko -->
+    <!-- ko if:weapons() && weapons().length > 0 -->
+            <input data-bind="textInput:weaponsFilter" placeholder="Filter by Name">
+        <!-- /ko -->
+    <div class="user-weapon-row-wrapper">
+        <!-- ko foreach:userWeapons -->
+            <user-weapon-tag params="weapon:$data,selectedWeapon:$parent.selectedWeapon, selectable: true"></user-weapon-tag>
+        <!-- /ko -->
+        
+        <!-- ko foreach:weaponsForDisplay -->
+            <div class="weapon-option tag-user-card" data-bind="click:$parent.selectedWeapon">
+                <div data-bind="text:name"></div>
+                <div>
+                    <span data-bind="text:fullDisplayText"></span> 
+                </div>
+            </div>
+        <!-- /ko -->
+    </div>
+   
+</div>

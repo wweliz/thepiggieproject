@@ -1,0 +1,108 @@
+<div class="navbar">
+	<div class="nav-left">
+		<a href="#">
+			<div class="logoWrapper">
+				<img src="images/logo/kalachi-logo-white.svg" onerror="this.onerror=null; this.src='image.png'" class="logo hidden-xs">
+				<img src="images/logo/kalachi-icon-white.svg" onerror="this.onerror=null; this.src='image.png'" class="logo visible-xs">
+			</div>
+		</a>
+	</div>
+
+	<div class="nav-right">
+		<a class="download-app" href="#/xxxxx">Get the app</a>
+	</div>
+</div>
+
+<div class="preview-post container no-gutter" data-bind="with:post">
+
+	<div class="col-xs-8 no-left-gutter">
+
+		<div class="ribbon">
+			<ul>
+				<!-- <li data-bind="if:weapon">
+					<i class="fa fa-crosshairs"></i><br />
+				</li> -->
+
+				<li data-bind="if:city && state">
+					<i class="fa fa-map-marker"></i><br />
+				</li>
+				<li data-bind="if:journalEntry">
+					<i class="fa fa-pencil"></i>
+				</li>
+			</ul>
+
+			<div class="chevron"></div>
+		</div>
+	
+		<img data-bind="attr:{src: photos()[0].url}">
+		
+		<div class="user-info col-xs-6">
+			<div class="avatarWrapper">
+				<img class="avatar" data-bind="attr:{src: avatar}">
+			</div>
+
+			<span class="username">@<span data-bind="text:username"></span></span>
+		</div>
+
+		<div class="col-xs-6 no-right-gutter">
+
+
+
+		</div>
+
+		<!-- <span data-bind="if:humanFriendlyTime">
+			<span data-bind="text:humanFriendlyTime"></span>
+		</span>
+
+		<span data-bind="if:weapon">
+			<i class="fa fa-crosshairs"></i>
+		</span>
+
+		<span data-bind="if:caption">
+			<span data-bind="text:caption"></span>		
+		</span>
+
+		<div data-bind="if: $parent.coordsValid()">
+			<div class="googlemap" data-bind="map:coordinates"></div>
+		</div>
+
+		<div data-bind="if:city && state">
+			<i class="fa fa-map-marker"></i>
+			<span><span data-bind="text:city"></span>, <span data-bind="text:state"></span></span>
+		</div>
+
+		<span data-bind="if:killCount">
+			<span data-bind="text:killCount"></span>
+		</span>
+
+		<span data-bind="if:animalType">
+			<span> </span>
+			<span data-bind="text:animalType"></span>
+		</span>
+
+		<div data-bind="if:solunar">
+			<i class="wi wi-day-lightning"></i>
+			<span data-bind="text:temp"></span><span>&#176</span>
+			<span data-bind="text:moonPhase"></span>
+		</div>
+
+		<div data-bind="if:weapon">
+			<span>Gun info line 1</span>
+		</div> -->
+
+	</div>
+
+	<!-- Registration sidebar-->
+	<div class="register-sidebar col-xs-4 no-right-gutter">
+		<h3 data-bind="visible: $parent.controlVis">Don't have a Hembow account yet?</h3>
+
+		<!-- shows either login or register component -->
+		<div data-bind="component: { name: $parent.componentName, params: {callback: $parent.redirectToDtPost} }" ></div>
+
+		<h3 data-bind="visible: $parent.controlVis">Already have an account?</h3>
+		<h3 data-bind="ifnot: $parent.controlVis">Don't have a Hembow account yet?</h3>
+		<button class="loginBtn btn btn-primary" data-bind="text: $parent.btnText, click: $parent.toggleComponent"></button>
+
+	</div>
+
+</div>

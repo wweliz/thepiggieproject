@@ -1,0 +1,164 @@
+
+#notifications {
+	ul.notificationList {
+		padding: 0;
+		margin-top: 10px;
+		height: 300px;
+		overflow-y: scroll; 
+
+
+		li {
+			text-align: left !important;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			border: none;
+			height: initial !important;
+			margin: 0px 5px 3px;
+			border-bottom: 1px solid #EEE;
+
+			.noteWrapper {
+				width: 90%;
+				display: inline-block;
+			}
+
+			.delete { display: none; }
+
+			&:hover {
+				.delete { display: inline-block; }
+			}
+
+			.read{
+				padding: 5px;
+				
+				border-left: 3px solid transparent;
+				min-height: 55px;
+			}
+
+			.unread {
+				padding: 5px;
+				margin: 0px 5px 3px;
+				border-bottom: 1px solid #EEE;
+				background-color: #EEE;
+				border-left: 3px solid $kalachiRed;
+				min-height: 55px;
+			}
+			a.notificationLink {
+				padding: 0;
+				margin: 0;
+			}
+			.nameLink {
+				display: inline-block !important;
+				padding: 0 !important;
+			}
+		}
+		.avatarWrapper {
+			width: 45px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin: 0 10px 0 0;
+		}
+
+		.postImageWrapper {
+			width: 15%;
+			float: right;
+		}
+	}
+
+	ul.notificationNav {
+		padding: 0;
+		margin: 0;
+		
+		li { display: inline-block; }
+
+		#allNotifications { }
+
+		.notificationRefresh { padding-top: 3px; }
+	}
+}
+
+	
+
+.notification-page {
+
+	ul.notificationList {
+		padding: 0;
+		margin-top: 10px;
+		list-style: none;
+		height: inherit;
+
+			li {
+			text-align: left !important;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			border: none;
+			height: initial !important;
+
+			.noteWrapper {
+				border-bottom: 1px solid #888;
+				width: 90%;
+				display: inline-block;
+			}
+
+			.delete { display: none; }
+
+			&:hover {
+				.delete { display: inline-block; }
+			}
+
+			
+
+
+			.read{
+				padding: 5px;
+				margin: 0px 5px 3px;
+				border-bottom: 1px solid #888;
+				border-left: 3px solid transparent;
+				min-height: 55px;
+			}
+
+			.unread {
+				padding: 5px;
+				margin: 0px 5px 3px;
+				border-bottom: 1px solid #EEE;
+				background-color: #EEE;
+				border-left: 3px solid $kalachiRed;
+				min-height: 55px;
+
+				&:hover {
+					background-color: #fff;
+				}
+			}
+
+			&:hover .noteWrapper {
+					background-color: #fff;
+				}
+
+			a.notificationLink {
+				padding: 0;
+				margin: 0;
+			}
+
+			.nameLink {
+				display: inline-block !important;
+				padding: 0 !important;
+			}
+		}
+		.postImageWrapper {
+			width: 125px;
+			height: 125px;
+			overflow: hidden;
+			float: right;
+		}
+
+		.avatarWrapper {
+			width: 45px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin: 0 10px;
+		}
+	}
+}

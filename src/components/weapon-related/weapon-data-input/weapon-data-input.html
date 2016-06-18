@@ -1,0 +1,54 @@
+
+<!-- ko with:selectedWeapon -->
+    <!-- ko if:$data.weaponType() != 'custom' || ($data.weaponType() == 'custom' && !$data.isEditMode()) -->
+        <div class="weapon-data">
+            <span class="weapon-label">Manufacturer:</span> <span data-bind="text:manufacturer"></span>
+        </div>
+        <div class="weapon-data">
+            <span class="weapon-label">Model:</span> <span data-bind="text:model"></span>
+        </div>
+        <div class="weapon-data">
+            <span class="weapon-label">Series:</span> <span data-bind="text:series"></span>
+        </div>
+    <!-- /ko -->
+
+    <!-- ko if:$data.weaponType() == 'custom' && $data.isEditMode() -->
+        <div class="weapon-data">
+            <span class="weapon-label">Manufacturer:</span> <input data-bind="value:manufacturer" maxLength="20">
+        </div>
+        <div class="weapon-data">
+            <span class="weapon-label">Model:</span> <input data-bind="value:model" maxlength="20">
+        </div>
+    <!-- /ko -->
+
+    <!-- ko if:$data.isEditMode() -->
+        <div class="weapon-data">
+            <span class="yearPrompt">Enter a model year for your weapon.</span> <br />
+            <span class="weapon-label">Year:</span> <input data-bind="value:year" type="number" max="2100" min="1000">
+        </div>
+        <!-- ko if:$data.weaponType() == 'rods' -->
+            <button class="btn btn-success" data-bind="click:$parent.addReel">Add Reel</button>
+        <!-- /ko -->
+        <!-- ko if:$data.weaponType() != 'rods' -->
+            <button class="btn btn-success" data-bind="click:$parent.saveWeapon">Save Weapon</button>
+        <!-- /ko -->
+
+        <!-- ko if:$data.weaponType() != 'rods' -->
+            <button class="btn btn-danger" data-bind="click:$parent.restart">Clear</button>
+        <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if:!$data.isEditMode() -->
+        <div class="weapon-data">
+            <span class="yearPrompt">Enter a model year for your weapon.</span>
+            <span class="weapon-label">Year:</span> <span data-bind="text:year"></span>
+        </div>
+    <!-- /ko -->
+    <!-- ko foreach:$data.additionalWeapons() -->
+        <create-new-weapon-form params="{saveWeapon: $parents[1].saveWeapon,
+                                        selectedWeapon: $data,
+                                        clearWeapon: $parents[1].clearWeapon,
+                                        returnToStart: $parents[1].returnToStart}"></create-new-weapon-form>
+    <!-- /ko -->
+<!-- /ko -->
+
+

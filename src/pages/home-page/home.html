@@ -1,0 +1,27 @@
+<div class="landing-page">
+	
+	<a class="register-button" href="#/"><button class="btn btn-kalachi">Register</button></a>
+	<a class="login-button" href="#/login"><button class="btn btn-kalachi">Login</button></a>
+
+	<div class="bg-cover">
+		<div class="access-panel col-md-4 col-sm-6 col-xs-10 col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
+
+			<h2 class="introText">Finish your story.</h2>
+
+			<div class="panelWrap">
+				<!-- shows either login or register component -->
+				<div data-bind="component: { name: activeTab, params: {} }" ></div>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="welcome-content">
+		<!-- <about></about>
+		<features></features>
+		<app></app>
+		<pricing></pricing> -->
+		<!-- <corporateinfo></corporateinfo> -->
+	</div>
+
+</div>

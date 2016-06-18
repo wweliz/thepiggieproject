@@ -1,0 +1,96 @@
+.us {
+	margin-top: -10px;
+	//height: 100vh;
+
+
+
+	&.container {
+		
+	}
+	
+	.inner{
+		background-color: #fff;
+		margin-top: 10px;
+		//padding: 10px 10px 50px;
+		min-height: 80vh;
+		//height: 95vh;
+	}
+
+	.jumbotron {
+		background-image: url('../../images/hembow-buck.jpg');
+		background-repeat:no-repeat;
+		background-size:cover;
+		background-position:left;
+		height: 20vh; 
+		margin-bottom: 10px;
+	}
+
+	.scrollContainer {
+		padding-bottom: 50px;
+		width: 99.5%;
+	}
+
+	.footer {
+	}
+
+	.nav>li>a {
+		padding: 10px 3px;
+	}
+}
+
+@media (max-width: 767px) { 
+	.us {
+		overflow-x: hidden;
+		overflow-y: hidden;
+		
+
+		.jumbotron {
+			background-image: url('../../images/hembow-buck.jpg');
+			background-repeat:no-repeat;
+			background-size:cover;
+			background-position:left;
+			height: 20vh; 
+			margin-bottom: 10px;
+
+			/*height: 110px;*/
+		}
+
+		.row{
+			.col-sm-3{ margin-top: -35px;}
+		}
+
+		.scrollContainer {
+
+		}
+
+		.inner {
+			//height: 98vh;
+		}
+
+		.nav {
+			//background-color: blue;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			margin-top: 30px;
+
+
+			.navbar-toggle {
+				padding: 0;
+			}
+
+			button {
+				float: left;
+				margin-left: 15px;
+				margin-right: 0;
+			}
+
+			.nav { 
+				border: none; 
+				margin-top: 0;
+			}
+
+		}
+	}
+}
+
+

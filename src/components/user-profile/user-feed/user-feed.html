@@ -1,0 +1,33 @@
+<div data-bind="ifnot:feedError">
+	<!-- <button class="filter-feed text-right btn btn-default">
+		<span>Filter</span>
+		<i class="fa fa-filter"></i>
+	</button> -->
+    <button class="btn btn-default" data-bind="click: toggleHeatmap" ><span data-bind="text: heatmapText"></span></button>
+
+    <div data-bind="if: heatmapActive()">
+        <heatmap params="posts: posts, postsLoaded: postsLoaded"></heatmap>
+    </div>
+    <div data-bind="ifnot: heatmapActive()">
+        <div class="row user-feed-container" data-bind="foreach: posts">
+            <post params="{post:$data}" class="col-md-4 col-sm-6 small-gutter"></post>
+        </div>
+    </div>
+</div>
+
+<div data-bind="if:feedError">
+	<!-- ko if: isCurrentUser() -->
+		<prompt-create-post></prompt-create-post>
+	<!-- /ko -->
+	<!-- ko if: !isCurrentUser() -->
+		<div class="well">
+			<div class="create-post-container text-center">
+				<h3>Nothing to see!</h3>
+				<div>
+					<p class="descriptor">This user does not currently have any posts.</p>
+				</div>
+			</div>
+
+		</div>
+	<!-- /ko -->
+</div>

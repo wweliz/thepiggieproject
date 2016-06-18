@@ -1,0 +1,105 @@
+/* FEATURED */
+.featured-users-feed {
+	.create-post-container {
+		border-left: 2px solid #999;
+
+		.post-btn {
+			display: inline-block;
+			margin: 0 auto;
+			i { font-size: 70px; }
+		}
+
+		a { color: $kalachiRed; text-align: center; }		
+	}
+}
+
+.featured-user {
+	.avWrapper, .user-details { display: inline-block; }
+	
+	.avatarWrapper {
+		height: 100px;
+		width: 100px;
+		margin-right: 15px;
+	}
+
+	a.profileLink { 
+		&:hover {
+			text-transform: none;
+		}
+	}
+	h2 { margin: 0; }
+	.post-image {
+		display: flex;
+	    align-items: center;
+	    overflow: hidden;
+	    height: 200px;
+	    border-bottom: 2px solid #333;
+		
+		.post-img {
+			flex-shrink: 0;
+		    min-width: 100%;
+		    min-height: 100%;
+		    -webkit-transition: all 0.3s ease;
+		    transition: all 0.3s ease;
+
+		     &:hover {
+				max-width: 106%;
+				margin-left: -3%;
+			}
+		}
+	}
+
+	.countWrapper {
+		display: inline-block;
+		text-align: center;
+		margin-right: 10px;
+		i, span { display: block; }
+
+		a {
+			color: #4e3e2a;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.col-xs-4:nth-child(3n) { padding-right: 0; }
+
+	.follow-btn { float: right; }
+
+	follow-button { margin-top: 10px; display: block; }
+}
+
+.featured-post {
+	a { text-decoration: none; }	
+	.caption { padding: 5px; }
+}
+
+// MEDIA QUERIES /////////////////////////////////////////////////////////
+// when screen size is extra small...
+@media (max-width: 767px) {
+	.featured-users-feed .create-post-container { border: 0; }
+
+	.panel-body { padding: 5px; }
+	.featured-post {
+		.caption { display: none; }
+		.thumbnail {
+			padding: 0;
+		}
+	} 
+	.featured-user {
+		h2 { font-size: 22px; }
+
+		span.countLabel { font-size: 12px; display: none; }
+	}
+}
+
+@media (min-width: 768px) {
+	.featured-users-feed .descriptor { height: 60px; }
+}
+
+// when screen size is small or extra small...
+@media (max-width: 991px) {
+	.user-profile.container { padding: 0; }
+}

@@ -1,0 +1,45 @@
+<!-- ko if: !weaponType() || (weaponType() && weaponType().name != 'reels') -->
+    <div class="weapon-type-selection bs-callout bs-callout-info">
+        <h4>Select the type of weapon you want to add</h4>
+        <button class="btn btn-warning" style="float: right" data-bind="click: cancelAddNew">Cancel</button>
+        <ul class="weaponTypes postTypes">
+            <!-- ko foreach:weaponTypes -->
+                <li class="weaponType postType btn btn-default" data-bind="css:{'hidden':typeof $parent.weaponType() != 'undefined' && $parent.weaponType() != $data}, click:$parent.weaponType">
+                    <img data-bind="img:{src:$data.src,fallback:$data.fallback}" height="32" width="32">
+                    <span data-bind="text: label"></span>
+                </li>
+            <!-- /ko -->
+            <!-- ko if:weaponType() -->
+                <button data-bind="click:clearWeapon" class="btn btn-close"><span class="glyphicon glyphicon-remove"></span></button>
+            <!-- /ko -->
+        </ul>
+    </div>
+<!-- /ko -->
+
+<!-- ko if: showManuSelect()-->
+    <div class="weapon-type-selection bs-callout bs-callout-info">
+         <h4>Select a <span data-bind="text:weaponTypeLabel"></span> manufacturer from the list.</h4>
+        <dropdown params="options:manufacturerList,selected:selectedManufacturer, clearable:false"></dropdown>
+        <div class="clr"></div>
+        <!-- ko if: availableWeapons().length > 0 -->
+            <weapon-selection-list params="weapons:availableWeapons,selectedWeapon:updateSelectedWeapon, noButton:true"></weapon-selection-list>
+        <!-- /ko -->
+        <!-- ko if: availableWeapons().length === 0 -->
+            <div class="alert alert-info text-center">
+                <strong>There are currently no weapons matching your filters.</strong> 
+                <p>You may need to add a Custom Weapon since we do not currently have your weapon available.</p>
+                <hr />
+                <span class="small"> We are constantly adding more weapons and may make your custom weapon available to other users if it is regularly available to Hembow users.</span>
+            </div>
+        <!-- /ko -->
+    </div>
+<!-- /ko -->
+
+<!-- ko if:weaponIsSelected() -->
+     <div class="weapon-type-selection bs-callout bs-callout-info">
+        <h4>Add this weapon to your arsenal.</h4>
+        <p>By clicking Save Weapon, you will be adding this weapon to your profile. You will not need to add it again for future posts. </p>
+        <hr />
+        <weapon-data-input params="userWeapons:userWeapons,selectedWeapon:selectedWeapon, clearWeapon:clearWeapon, returnToStart:returnToStart, saveWeapon: saveWeapon, showAddAlert: showAddAlert"></weapon-data-input>
+    </div>
+<!-- /ko -->

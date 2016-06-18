@@ -1,0 +1,18 @@
+<div data-bind="attr:{id:id}">
+    <div id="dropzone-container" data-bind="visible: showDropzone(), style: {height: height, width:width}">
+
+        <div id="dropzone" class="link">
+            <!-- ko if: intro -->
+                <h4 data-bind="visible: intro, text: intro"></h4>
+            <!-- /ko -->
+        </div>
+    </div>
+    <div class="spinner" data-bind="visible: showSpinner(), style: {height:height || '250px', width:width || '250px'}" >Loading...</div>
+    <div data-bind="visible: showEditor()">
+        <cropper params="image:originalImage, croppedImage: croppedImage, postImage: postImage, resultSize:resultSize, orientation: orientation, circle:circle"></cropper>
+    </div>
+    <div data-bind="visible: showChosen()">
+        <img class="img-responsive" data-bind="img:{src:croppedImage()}">
+        <button class="btn btn-danger" data-bind="click:clear">Remove</button>
+    </div>
+</div>

@@ -1,0 +1,175 @@
+<div data-bind="with:details">
+    <div class="bs-callout bs-callout-info" data-bind="visible: $parent.editable">
+        <h4>Your Weather Details</h4>
+         <div data-bind="visible: !$parent.isDisabled()">
+            <span class="text-center" >The information below may be changed to fit your experience. Click the icons or text to make changes.</span>
+        </div>
+        
+    </div>
+
+    <div data-bind="visible: !$parent.isDisabled()">
+        <div class="row weather-stats-first-row">
+
+            <!-- Rainy, Sunny, etc. -->
+            <div class="col-xs-3  text-center small-gutter weather-readout">
+                <div class="">
+                    <div class="inner">
+                        <!-- ko if: $parent.editable -->
+    		               <icon-selector params="value:summaryIcon, options:summaryOptions, height: '65px', width: '65px', offSwitchChannel:$parent.offSwitchChannel, showModal:true" class="link"></icon-selector>
+                         <!-- /ko -->
+                         <img data-bind="attr:{src: 'images/svg/'+summaryIcon()+'.svg'}, visible: !$parent.editable" class="summaryIcon img-responsive" class="link"/>
+
+                    </div>
+                    <span class="weatherLabel" data-bind="text:summaryIconName"></span>
+                </div>
+            </div>
+            <!-- Rainy, Sunny, etc. -->
+
+
+            <!-- Temperature -->
+            <div class="col-xs-3  text-center small-gutter weather-readout">
+                <div class="">
+    	           <div class="inner">
+                        <span>
+                            <!-- ko if: $parent.editable -->
+    			             <editable-label class="temp" params="value:$parent.celsius() ? temperatureC : temperatureF, id:'temp-input', type:'number', integersOnly:true"></editable-label>
+                            
+                             <!-- /ko -->
+                            <span data-bind="text: $parent.celsius() ? temperatureC : temperatureF,text:$parent.celsius() ? temperatureC : temperatureF, visible: !$parent.editable"></span>
+                            <span class='unit-marker'>ºF</span>
+
+                        </span>
+                    </div>
+        		      <span class="weatherLabel" data-bind="click:$parent.toggleCelsius">Temp</span> 
+                </div>
+            </div>
+    	<!-- Temperature -->
+
+
+            <!-- Moonphase -->
+            <div class="col-xs-3 text-center small-gutter weather-readout">
+                <div class="">
+                    <div class="inner text-center">
+                         <!-- ko if: $parent.editable -->
+    		              <icon-selector params="value:moonIcon, options:moonOptions, height: '65px', width: '65px', offSwitchChannel:$parent.offSwitchChannel, showModal:true" class="link"></icon-selector>
+                          <!-- /ko -->
+                            <!-- ko if: !$parent.editable -->
+                            <img data-bind="attr:{src: 'images/svg/'+moonIcon()+'.svg'}" class="moonIcon img-responsive" class="link"/>
+                            <!-- /ko -->
+
+                    </div>
+                    <span class="weatherLabel" data-bind="text: moonIconName"></span>
+                </div>
+            </div>
+            <!-- Moonphase -->
+       
+            <div class="col-xs-3  text-center small-gutter weather-readout">
+
+    	    <!-- Humidity -->
+                <div class="">
+                    <div class="inner text-center">
+                         <!-- ko if: $parent.editable -->
+    		              <editable-label params="value:humidity, id:'humidity-input', type:'number', min:0, max:1, step:0.01, offSwitchChannel:$parent.offSwitchChannel"></editable-label>
+                          <!-- /ko -->
+                        <!-- ko if: !$parent.editable -->
+                            <span data-bind="text: humidity"></span>
+                        <!-- /ko -->
+                        <span class='unit-marker'>%</span>
+
+                    </div>
+                    <span class="weatherLabel">Humidity</span>
+                </div>
+                <!-- Humidity -->
+            </div>
+        </div>
+        <div class="row weather-stats-second-row"> 
+
+            <div class="col-xs-3 text-center small-gutter weather-readout">
+                <!-- Pressure -->
+                <div class="">
+                     <div class="inner text-center">
+                        <!-- ko if: $parent.editable -->
+    		              <editable-label params="value:pressure, id:'pressure-input', type:'number', min:0, max:1000, offSwitchChannel:$parent.offSwitchChannel" class="link"></editable-label>
+                           <!-- /ko -->
+                            <!-- ko if: !$parent.editable -->
+                                <span data-bind="text:pressure"></span>
+                            <!-- /ko -->
+                     </div>
+                     <span class="weatherLabel">Pressure</span>
+                </div>
+                <!-- Pressure -->
+            </div>
+
+            <div class="col-xs-3   text-center small-gutter weather-readout">
+                <!-- Wind -->
+                <div class="">
+                    <div class="inner text-center">
+                        <!-- ko if: $parent.editable -->
+    		          <editable-label params="value:windSpeed, id:'wind-speed-input', type:'number', min:0, max:100"></editable-label>
+
+                       <editable-label params="value:windDirection,id:'wind-direction-input', type:'text', maxLength:3"></editable-label>
+                        <!-- /ko -->
+                        <!-- ko if: !$parent.editable -->
+                            <span data-bind="text: windSpeed"></span>
+                            <span data-bind="text: windDirection"></span>
+                        <!-- /ko -->
+
+                    </div>
+                    <span class="weatherLabel">Wind</span>
+                </div>
+                <!-- Wind -->
+
+            </div>
+            <div class="col-xs-3  text-center small-gutter weather-readout">
+                <!-- SunriseSunset -->
+                <div class="">
+                    <div class="inner text-center">
+    		    <span data-bind="text: sunrise"></span>
+                    </div>
+                    <span class="weatherLabel">Sunrise</span>
+                </div>
+            </div>
+            <div class="col-xs-3  text-center weather-readout">
+    	    <div class="">
+    		<div class="inner text-center">
+    		    <span data-bind="text: sunset"> </span>
+    		</div>
+    		<span class="weatherLabel">Sunset</span>
+    	    </div>
+    	    <!-- SunriseSunset -->
+    	</div>
+    </div>
+
+
+<!--
+	Moon Phase: <editable-label params="value:moonPhase, id:'moon-phase-input', type:'number', min:0, max:1.0"></editable-label>
+-->
+        </div>
+    <!-- ko if: $parent.editable -->
+         <hr />
+    <div class="weatherToggle" >
+     <div data-bind="click: $parent.toggleWeather" style="display: inline-block;">
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="26px" height="26px" viewBox="0 0 26 26" enable-background="new 0 0 26 26" xml:space="preserve" fill="#ff0000" data-bind="visible: !$parent.isDisabled()">
+
+                 <g fill="#ff0000">
+                    <path fill="#ff0000" d="M21.125,2C22.71,2,24,3.29,24,4.875v16.25C24,22.71,22.71,24,21.125,24H4.875C3.29,24,2,22.71,2,21.125   V4.875C2,3.29,3.29,2,4.875,2H21.125 M21.125,0H4.875C2.182,0,0,2.182,0,4.875v16.25C0,23.818,2.182,26,4.875,26h16.25   C23.818,26,26,23.818,26,21.125V4.875C26,2.182,23.818,0,21.125,0L21.125,0z"/>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" width="26px" height="26px" viewBox="0 0 26 26" enable-background="new 0 0 26 26" xml:space="preserve" fill="#ff0000" data-bind="visible: $parent.isDisabled()">
+                <path style="fill:#ff0000" d="M 21.125,2 C 22.71,2 24,3.29 24,4.875 v 16.25 C 24,22.71 22.71,24 21.125,24 H 4.875 C 3.29,24 2,22.71 2,21.125 V 4.875 C 2,3.29 3.29,2 4.875,2 h 16.25 m 0,-2 H 4.875 C 2.182,0 0,2.182 0,4.875 v 16.25 C 0,23.818 2.182,26 4.875,26 h 16.25 C 23.818,26 26,23.818 26,21.125 V 4.875 C 26,2.182 23.819,0 21.125,0 l 0,0 z" fill="#ff0000"/>
+                <path style="fill:#ff0000" d="M 21.498,5.871 19.9,4.784 C 19.46,4.488 18.857,4.602 18.559,5.04 L 10.736,16.577 7.14,12.981 c -0.375,-0.375 -0.987,-0.375 -1.364,0 L 4.412,14.35 c -0.378,0.376 -0.378,0.989 0,1.365 l 5.526,5.528 c 0.312,0.31 0.796,0.549 1.234,0.549 0.439,0 0.88,-0.277 1.164,-0.69 L 21.755,7.209 c 0.299,-0.438 0.184,-1.04 -0.257,-1.338 z" fill="#ff0000"/>
+            </svg>
+
+
+
+
+         </div>
+         <strong>Disable weather for this post.</strong> 
+        </div>
+        <!-- /ko -->
+     </div>
+</div>
+
+

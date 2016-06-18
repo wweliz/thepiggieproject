@@ -1,0 +1,68 @@
+<div data-bind="with:critter">
+	<h4 class="critterLabel">
+		<!-- ko if: $parent.quantity > 0 -->
+			<span data-bind="text: $parent.quantity"></span>
+		<!-- /ko -->
+		<!-- ko if: $parent.gender -->
+			<span class="gender" data-bind="text: $parent.gender"></span>
+		<!-- /ko -->
+
+		<span data-bind="click: $parent.exploreSpecies, css: {'link': $parent.isLink()}">
+			<!-- ko if: $parent.quantity > 1 -->
+				<span data-bind="text: subSpecie.pluralName || specie.name || type.name"></span>
+			<!-- /ko -->
+			<!-- ko if: $parent.quantity <= 1 -->
+				<span data-bind="text: subSpecie.singularName || specie.name || type.name"></span>
+			<!-- /ko -->
+		</span>
+	</h4>
+
+	
+	<!-- ko if: $parent.age -->
+		<div class="age">
+			<span class="dataLabel">Age: </span> 
+			<span data-bind="text: $parent.age"></span><br />
+		</div>
+	<!-- /ko -->
+
+		<!-- <div class="length">
+			<span class="dataLabel">Length: </span>
+			<span data-bind="text: $parent.length.ft"></span> ft., 
+			<span data-bind="text: $parent.length.in"></span> in.
+		</div> -->
+
+	<!-- ko if: $parent.weight -->
+		<div class="weight">
+			<span class="dataLabel">Weight: </span> 
+
+			<span data-bind="text: $parent.weight"></span>
+		</div>
+	<!-- /ko -->
+
+
+	<!-- ko if: $parent.htLeftHorn -->
+		<div class="height-left-horn">
+			<span class="dataLabel">Height of Left Horn: </span> 
+
+			<span data-bind="text: $parent.htLeftHorn"></span>
+		</div>
+	<!-- /ko -->
+	<!-- ko if: $parent.htRightHorn -->
+		<div class="height-right-horn">
+			<span class="dataLabel">Height of Right Horn: </span> 
+
+			<span data-bind="text: $parent.htRightHorn"></span>
+		</div>
+	<!-- /ko -->
+
+
+	<!-- ko if: $parent.banded -->
+		<span><i class="fa fa-check"></i> Banded</span><br>
+	<!-- /ko -->
+	<hr />
+	<!-- ko if: $parent.quantity === 0 -->
+		<div class="well alert alert-info">
+			<span>No luck on this outing!</span> 
+		</div>
+	<!-- /ko -->
+</div>

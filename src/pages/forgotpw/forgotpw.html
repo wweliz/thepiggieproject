@@ -1,0 +1,33 @@
+<div class="forgotpw">
+
+	<title data-bind="pageTitle: 'Hembow | Forgot Password' "></title>
+	<div id="bg"> <img src="../../images/landingpage/Glacier494.jpg"></div>
+
+	<div class="access-panel container">
+		<div class="panelWrap">
+			<div class="inner-wrapper">
+				
+
+
+
+				<div class="forgotpw text-center login">
+	
+				<h3 class="note">Password Reset</h3>
+
+				<p>Enter your email address and you will recieve <br>instructions on how to retreive your account information.</p>
+				<input placeholder="Email Address" data-bind="value:email">
+				<!-- ko if: alertMsg -->
+				<br />
+				<div class="alert alert-success" role="alert">
+					<p data-bind="text: alertMsg"></p>
+				</div>
+				
+				<!-- /ko -->
+				<br />
+				<button class="btn btn-primary" data-bind="click:submitRequest"><span data-bind="text: buttonText"></spanm></button>
+
+			</div>
+		</div>
+	</div>
+
+</div>

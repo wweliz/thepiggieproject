@@ -1,0 +1,31 @@
+<title data-bind="pageTitle: 'Hembow | Corporate Information'"></title>
+
+<div class="us container">
+	
+	<div class="inner col-sm-10 col-sm-offset-1">
+		
+		<div class="jumbotron "></div>
+		
+		<div class="row">
+			<div class="col-sm-3 col-md-2">
+				<corpsidebar></corpsidebar>
+			</div>
+
+			<div class="col-sm-9 col-md-10 scrollContainer">
+				<div data-bind="component: { name: activeTab }"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="footer col-xs-12 corporate-footer">
+				<a href="#/" class="logolink">
+				<img src="/images/logo/kalachi-icon-white.svg">
+				</a>
+				<span class="corporate-footer-text">
+				Hembow &copy; 2014 - <span data-bind="text: currentYear"></span>, Bison224.</span>
+			</div>
+		</div>
+	</div>
+
+	
+
+</div>

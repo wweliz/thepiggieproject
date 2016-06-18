@@ -1,0 +1,39 @@
+<div class="create-club">
+
+	<h2>Create a Club</h2>
+
+	<label for="name">Club Name</label>
+	<input type="text" id="name" placeholder="Club Name" data-bind="value:name">
+	<span class="warning" data-bind='visible:name.hasError, text:name.validationMessage'></span>	
+	<br>
+
+	<fieldset>
+		<input type="radio" name="open" data-bind="checked:groupType, checkedValue:'open'">
+		<label for="open">Open</label>
+
+		<input type="radio" name="follow" data-bind="checked:groupType, checkedValue:'follow'">
+		<label for="follow">Follow</label>
+
+		<input type="radio" name="request" data-bind="checked:groupType, checkedValue:'request'">
+		<label for="request">Request</label>
+
+		<input type="radio" name="private" data-bind="checked:groupType, checkedValue:'private'">
+		<label for="private">Private</label>
+	</fieldset>
+
+	<div data-bind="text:groupTypeMsg"></div>
+
+	<label for="description">About Group</label>
+	<input type="text" id="description" placeholder="Tell us a little about this club..." data-bind="value:description">
+	<br>
+
+	<label for="tags">Tags</label>
+	<span></span>
+	<input type="text" id="tags" placeholder="Tags" data-bind="value:tags">
+	<br>
+
+	<button class="btn btn-default" data-bind="click:createClub">Create Club</button>
+
+	<div data-bind="text: alertMsg"></div>
+
+</div>

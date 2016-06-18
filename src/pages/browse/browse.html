@@ -1,0 +1,39 @@
+<title data-bind="pageTitle: pageTitle "></title>
+<div data-bind="scrollLoader" class="feed-page-container container">
+
+	<notification-drawer params="{ drawerContents: drawerContents }"></notification-drawer>
+
+	<div data-bind="ifnot:feedError">
+
+		<div class="feed-container col-lg-12">
+			<!-- <button class="filter-feed text-right btn btn-default">
+				<span>Filter</span>
+				<i class="fa fa-filter"></i>
+			</button> -->
+
+			<div data-bind="foreach: posts.infinitescroll.displayItems">
+				<div class="col-md-4 col-sm-6 col-xl-3 small-gutter">
+					<post params="{post:$data}"></post>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="sidebar col-md-3 no-right-gutter hidden-md hidden-sm hidden-xs">
+			<sidebar-action-items></sidebar-action-items>
+		</div> -->
+
+	</div>
+
+	<div data-bind="if:feedError">
+		<div class="feed-container col-lg-6 col-lg-offset-3">
+
+			<div data-bind="if: followClicked() >= 3">
+				<button class="btn btn-default" data-bind="click:refreshFeed">Refresh Feed</button>
+			</div>
+
+			<prompt-build-your-feed params="incrementFollowClick:incrementFollowClick"></prompt-build-your-feed>
+
+		</div>
+	</div>
+
+</div>

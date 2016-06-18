@@ -1,0 +1,14 @@
+<div data-bind="ifnot:feedError">
+	<div class="followees-container">
+
+		<div data-bind="foreach: approvedFollowers">
+			<follower params="{follower: $data, followType: $parent.requestName}" class="col-md-4 col-sm-6 small-gutter"></follower>
+		</div>
+
+	</div>
+</div>
+
+<div data-bind="if:feedError">
+	<span data-bind="if: $parent.id() != currentUserId()">This user does not have any followers.</span>
+	<span data-bind="if: $parent.id() == currentUserId()">You do not have any followers.</span>
+</div>

@@ -1,0 +1,30 @@
+/* TROPHY STYLING */
+.trophy-feed-container {
+	.col-md-4:nth-child(3n+1) { clear: both; }
+}
+
+@media (min-width: 1600px) {
+	.trophy-feed-container .col-md-4:nth-child(3n+1) { clear: none; }
+	.trophy-feed-container .col-md-4:nth-child(4n+1) { clear: both; }
+}
+
+@media (max-width: 991px) {
+	.trophy-feed-container .col-md-4:nth-child(3n+1) { clear: none; }
+	.trophy-feed-container .col-md-4:nth-child(2n+1) { clear: both; }
+}
+
+.trophy {
+	background-color: #fff;
+	margin-bottom: 5px;
+	-webkit-box-shadow: 2px 2px 5px -1px rgba(122,122,122,1);
+	-moz-box-shadow: 2px 2px 5px -1px rgba(122,122,122,1);
+	box-shadow: 2px 2px 5px -1px rgba(122,122,122,1);
+	margin-bottom: 5px;
+	padding: 10px;
+
+	img { width: 100%; }
+}
+
+.isUnlocked {
+	img { opacity: 0.4; }
+}

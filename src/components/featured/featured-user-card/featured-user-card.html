@@ -1,0 +1,69 @@
+<div data-bind="with:user" class="panel panel-default">
+
+	<div class="panel-body">
+		<div class="row">
+			
+			<!-- AVATAR -->
+			<div class="avWrapper col-xs-4 col-sm-2 text-center">
+				<a data-bind="attr:{ href: profileUrl }" class="avatarWrapper" >
+					<img class="avatar" data-bind="attr:{src: avatar}" alt="profile photo"/>
+				</a>
+			</div>
+			
+			<div class="user-details col-xs-8 col-sm-10 row">
+				
+				<div class="col-sm-6">
+					<!-- USER INFO -->
+					<a data-bind="attr:{ href: profileUrl }" class="profileLink" >
+						<h2 data-bind="text:name"></h2>
+						<span data-bind="text:handle"></span>
+					</a>
+					<!-- <span class="location" data-bind="text:home"></span> -->
+				</div>
+				
+				<div class="col-sm-6 text-right">
+					<!-- USER COUNTS & FOLLOW -->
+					<div class="countWrapper">
+						<a data-bind="attr:{ href: profileUrl }">
+							<i class="fa fa-camera"></i>
+							<span class="countLabel">Posts</span>
+							<span data-bind="text: postCount"></span>
+							<!-- <span>52</span> -->
+						</a>
+					</div>
+
+					<div class="countWrapper">
+						<a data-bind="attr:{ href: followerUrl }">
+							<i class="fa fa-users"></i>
+							<span class="countLabel">Followers</span>
+							<!-- <span data-bind="text: followerCount"></span> -->
+							<span>-</span>
+						</a>
+					</div>
+
+					<div class="countWrapper">
+						<a data-bind="attr:{ href: followingUrl }">
+							<i class="fa fa-user"></i>
+							<span class="countLabel">Following</span>
+							<!-- <span data-bind="text:followingCount"></span> -->
+							<span>-</span>
+						</a>
+					</div>
+					<br />
+					<follow-button params="id: id, isPrivate: userIsPrivate, fullName: name, callback:$parent.incrementFollowClick"></follow-button>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div data-bind="if: huntsArray().length > 0">
+			<div data-bind="foreach: postsArray">
+				<featured-post params="{post:$data}" class="col-xs-4 small-gutter"></featured-post>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="clr"></div>

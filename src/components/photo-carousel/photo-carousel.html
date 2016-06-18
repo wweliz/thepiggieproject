@@ -1,0 +1,41 @@
+<div class="photo-carousel">
+
+	<!-- ko if: showCarousel() -->
+		<div id="img-slider" class="carousel slide" data-ride="carousel">
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" data-bind="foreach:photos">
+
+				<!-- ko if: $index() == 0 -->
+					<div class="item active">
+						<img data-bind="attr:{src:url}">
+					</div>
+				<!-- /ko -->
+
+				<!-- ko if: $index() != 0 -->
+					<div class="item">
+						<img data-bind="attr:{src:url}">
+					</div>
+				<!-- /ko -->
+
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#img-slider" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+
+			<a class="right carousel-control" href="#img-slider" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+
+		</div>
+	<!-- /ko -->
+
+	<!-- ko if: !showCarousel() -->
+		<!-- ko with: photos()[0] -->
+			<img class="post-img img-responsive" data-bind="attr:{src: url}"/>
+		<!-- /ko -->
+	<!-- /ko -->
+
+</div>

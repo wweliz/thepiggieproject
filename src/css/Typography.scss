@@ -1,0 +1,77 @@
+/* TYPOGRAPHY */
+@font-face {
+	font-family: 'Font Awesome';
+	src: url('../fonts/font-awesome/fonts/fontawesome-webfont.eot');
+	src: local('Font Awesome')
+	url("../fonts/font-awesome/fonts/fontawesome-webfont.woff") format("woff"),
+	url("../fonts/font-awesome/fonts/fontawesome-webfont.otf") format("opentype"),
+	url("../fonts/font-awesome/fonts/fontawesome-webfont.svg") format("svg");
+}
+
+@font-face {
+	font-family: 'Moon Phases';
+	src: url("../fonts/moonphase/moon_phases.ttf");
+	src: local('Moon Phases')
+	url("../fonts/moonphase/MoonPhases-Regular.woff") format("woff"),
+	url('../fonts/moonphase/MoonPhases-Regular.eot'),
+	url("../fonts/moonphase/MoonPhases-Regular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+span.moon {
+	font-family: 'Moon Phases';
+	font-size: 2em;
+	
+	&.a:after { content: 'A'; }
+	&.b:after { content: 'B'; }
+	&.c:after { content: 'C'; }
+	&.d:after { content: 'D'; }
+	&.e:after { content: 'E'; }
+	&.f:after { content: 'F'; }
+	&.g:after { content: 'G'; }
+	&.h:after { content: 'H'; }
+	&.i:after { content: 'I'; }
+	&.j:after { content: 'J'; }
+	&.k:after { content: 'K'; }
+	&.l:after { content: 'L'; }
+	&.m:after { content: 'M'; }
+	&.n:after { content: 'N'; }
+	&.o:after { content: 'O'; }
+	&.p:after { content: 'P'; }
+	&.q:after { content: 'Q'; }
+	&.r:after { content: 'R'; }
+	&.s:after { content: 'S'; }
+	&.t:after { content: 'T'; }
+	&.u:after { content: 'U'; }
+	&.v:after { content: 'V'; }
+	&.w:after { content: 'W'; }
+	&.x:after { content: 'X'; }
+	&.y:after { content: 'Y'; }
+	&.z:after { content: 'Z'; }
+
+	&.full:after { content: '\f0049'; }
+	&.new:after { content: '0'; }
+	&.waxing_c:after { content: 'E'; }
+	&.first_qtr:after { content: 'G'; }
+	&.waxing_g:after { content: 'I'; }
+	&.waning_g:after { content: 'R'; }
+	&.third_qtr:after { content: 'T'; }
+	&.waning_c:after { content: 'V'; }
+}
+
+@import url(http://fonts.googleapis.com/css?family=Halant:300,400,500);
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Halant', serif;
+	font-weight: 400;
+	color: $brown-text;
+}

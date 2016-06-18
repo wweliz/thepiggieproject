@@ -1,0 +1,24 @@
+{
+  "name": "showingoffknockout",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "components-bootstrap": "~3.1.1",
+    "crossroads": "~0.12.0",
+    "hasher": "~1.2.0",
+    "requirejs": "~2.1.11",
+    "requirejs-text": "~2.0.10",
+    "knockout": "~3.3.0-alpha",
+    "knockout-projections": "~1.1.0",
+    "moment": "~2.10.2",
+    "requirejs-google-analytics": "~0.1.11",
+    "event-emitter": "~0.1.0",
+    "js-marker-clusterer": "*",
+    "exif-js": "~2.1.1",
+    "knockout-js-infinite-scroll": "~0.1.1",
+    "knockout-postbox": "~0.5.2"
+  },
+  "resolutions": {
+    "knockout": "~3.3.0-alpha"
+  }
+}

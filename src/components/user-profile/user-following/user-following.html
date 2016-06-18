@@ -1,0 +1,11 @@
+<h2>Following</h2>
+<div data-bind="ifnot:feedError">
+	<div data-bind="foreach: approvedFollowing" class="following-container row">
+		<follower params="{follower: $data}" class="col-md-4 col-sm-6 small-gutter"></follower>
+	</div>
+</div>
+
+<div data-bind="if:feedError">
+	<span data-bind="if: $parent.id() != currentUserId()">This user is not following anyone.</span>
+	<span data-bind="if: $parent.id() == currentUserId()">You are not following anyone.</span>
+</div>

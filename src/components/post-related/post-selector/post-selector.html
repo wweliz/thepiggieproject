@@ -1,0 +1,19 @@
+<div>
+    <ul class="postTypes">
+    
+    <!-- ko foreach: postTypes() -->
+       
+            <li data-bind="click:$parent.selectedPostType, css:{'hidden':$parent.iconHidden($data), 'selected':$parent.selectedPostType() == $data}, postEditing:postEditing" class="postType btn btn-default">
+                <img class="post-type-icon" data-bind="attr:{src:imagePath}">
+                <br />
+                <span data-bind="text: label" ></span>
+            </li>
+        
+    <!-- /ko -->
+     <!-- ko if:selectedPostType() -->
+        <button data-bind="click:unsetSelectedPostType" class="btn btn-close"><span class="glyphicon glyphicon-remove" ></span></button>
+    <!-- /ko -->
+
+    </ul>
+
+</div>

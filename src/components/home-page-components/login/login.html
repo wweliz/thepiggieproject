@@ -1,0 +1,22 @@
+<title data-bind="pageTitle: 'Log in to Hembow' "></title>
+
+<div class="login">
+	<h3 class="note">Login to your account.</h3>
+	<a class="btn fb-button" data-bind="click:loginFB"><i class="fa fa-facebook"></i> Log In with Facebook</a>
+
+	<!-- <a class="btn tw-button" data-bind="click:loginTw;">Log In with Twitter</a> -->
+
+	<input placeholder="Username" data-bind="value:username">
+	<input type="password" placeholder="Password" data-bind="value:password, valueUpdate:'afterkeydown', enterkey:loginWithUsername">
+	<input id="botField" data-bind="value:botField">
+
+	<button class="btn btn-primary loginBtn" data-bind="click:loginWithUsername">Log In</button>
+
+	<div data-bind="text: alertMsg"></div>
+
+	<p class="text-center">
+		<br />
+		<a href="#forgotpw">Forgot password?</a>
+	</p>
+
+</div>

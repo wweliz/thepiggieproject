@@ -1,0 +1,74 @@
+<div class="user-info">
+	<div class="profile-header" data-bind="with:club">
+		
+		<div class="cover club-cover">
+
+			<div class="cover-controls" data-bind='if:$parent.currentUserIsAdmin'>
+				<button class="btn btn-primary" data-bind="click:$parent.enableCoverPhotoDZ, visible:$parent.buttonViz">Update Cover Photo</button>
+			</div>
+
+			<img class="img-responsive" data-bind="visible:$parent.coverViz, img:{src:coverPhoto,fallback:'http://placekitten.com/1240/300'}" alt="cover photo">
+
+			<div data-bind="visible:$parent.dropzoneViz">
+				<dropzone-photo-uploader params="{id:'cover-dz',file:coverPhoto,cb:$parent.updateCoverPhoto}"></dropzone-photo-uploader>
+			</div>
+		</div>
+
+		<div class="user-data">
+			
+			<div class="col-sm-2">
+				<a class="avatarWrapper">
+					<img class="avatar" data-bind="attr:{src: avatar}" alt="profile photo"/>
+				</a>
+			</div>
+
+			<div class="col-sm-10 club-identity">
+				
+				<div class="col-sm-6">	
+					<h2>
+						<span data-bind='text:clubname'></span>
+						<a data-bind="attr: { href: settingsUrl }"><i class="fa fa-gear"></i></a>
+					</h2>
+					<!-- <span data-bind='text:city'></span>
+					<span data-bind='text:state'></span> -->
+					<button class="btn btn-primary">Follow</button>
+				</div>
+
+				<div class="col-sm-6 profile-nav">
+					<a class="btn info-nav-btn" data-bind="attr: { href: aboutUrl }">
+						<i class="fa fa-question-circle"></i>
+						<span>About</span>
+					</a>
+
+					<a class="btn info-nav-btn" data-bind="attr: { href: feedUrl }">
+						<i class="fa fa-camera"></i>
+						<!-- <span data-bind="text:postCount"></span> -->
+						<span>Posts</span>
+					</a>
+
+					<a class="btn info-nav-btn" data-bind="attr: { href: membersUrl }">
+						<i class="fa fa-group"></i>
+						<!-- <span data-bind="text:memberCount"></span> -->
+						<span>Members</span>
+					</a>
+
+					<a class="btn info-nav-btn" data-bind="attr: { href: followersUrl }">
+						<i class="fa fa-users"></i>
+						<!-- <span data-bind="text:followerCount"></span> -->
+						<span>Followers</span>
+					</a>
+
+				<!-- ko if: $parent.showAdmin -->
+					<a class="btn info-nav-btn" data-bind="attr: { href: settingsUrl }">
+						<i class="fa fa-gear"></i>
+						<span>Club Settings</span>
+					</a>
+				<!-- /ko -->
+				</div>
+
+		</div>
+
+		<div class="clr"></div>
+		
+	</div>
+</div>

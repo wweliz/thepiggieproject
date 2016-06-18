@@ -1,0 +1,19 @@
+<div class="user-clubs">
+	
+	<div data-bind="ifnot:feedError">
+		<button class="filter-feed text-right btn btn-default">
+			<span>Filter</span>
+			<i class="fa fa-filter"></i>
+		</button>
+
+		<div class="row club-feed-container" data-bind="foreach: allClubs">
+			<club params="{club:$data}" class="col-md-4 col-sm-6 small-gutter"></club>
+		</div>
+	</div>
+
+	<div data-bind="if:feedError">
+		<featured-clubs-feed></featured-clubs-feed>
+	</div>
+
+</div>
+

@@ -1,0 +1,365 @@
+//GLOBAL FEED LAYOUT CONTROLS
+.feed-container {
+	//TODO: Add this bootstrap fix to responsive media queries for other breakpoints. - JK
+	.col-md-4:nth-child(3n+1) { clear: both; }
+}
+
+	
+
+// POST LAYOUT AS IT IS VISIBLE ON A FEED VIEW
+.post {
+	background-color: #fff;
+	overflow: hidden;
+	-webkit-box-shadow: 2px 2px 5px -1px rgba(122,122,122,1);
+	-moz-box-shadow: 2px 2px 5px -1px rgba(122,122,122,1);
+	box-shadow: 2px 2px 5px -1px rgba(122,122,122,1);
+	//-webkit-border-radius: 5px;
+	//-moz-border-radius: 5px;
+	//border-radius: 5px;
+	margin-bottom: 5px;
+	//background: #dadada; /* Old browsers */
+	// background: -moz-linear-gradient(left,  #dadada 0%, #ffffff 100%); /* FF3.6+ */
+	// background: -webkit-gradient(linear, left top, right top, color-stop(0%,#dadada), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	// background: -webkit-linear-gradient(left,  #dadada 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	// background: -o-linear-gradient(left,  #dadada 0%,#ffffff 100%); /* Opera 11.10+ */
+	// background: -ms-linear-gradient(left,  #dadada 0%,#ffffff 100%); /* IE10+ */
+	// background: linear-gradient(to right,  #dadada 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dadada', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+	.species {
+		text-shadow: .15px .25px #777;
+	}
+	.datestamp {
+		color: #999;
+		font-size: .9em;
+	}
+
+	// .post-image {
+	// 	
+	// 	overflow: hidden;
+	// 	width: 100%;
+	// 	
+
+	// 	img {
+	// 		margin-left: 0;
+	// 		transition: all 0.3s ease;
+
+			
+	// 	}
+	// }
+
+	.post-image {
+	    //display:flex;
+	    justify-content:center;
+	    align-items:center;
+	    overflow:hidden;
+	    height: 330px;
+	    border-bottom: 2px solid #333;
+
+		img {
+		    //flex-shrink:0;
+		    min-width:100%;
+		    min-height:100%;
+		    transition: all 0.3s ease;
+
+		    &:hover {
+				max-width: 106%;
+				margin-left: -3%;
+			}
+		}
+	}
+	.ribbon {
+		width: 35px;
+		position: absolute;
+		right: 10px;
+		background-color: orange;
+		color: #fff;
+		margin-bottom: -20px;
+
+		a{
+			text-decoration: none;
+			color: #fff;
+		}
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				position: relative;
+				z-index: 5;
+				
+				li {
+					padding: 2px 0;
+					text-align: center;
+
+					i {
+						font-size: 1.42em;
+					}
+				}
+			}
+
+		.chevron {
+			position: relative;
+		  text-align: center;
+		  padding: 5px;
+		  margin-bottom: -10px;
+		  height: 1px;
+		  width: 100%;
+		
+			&:before {
+			  content: '';
+			  position: absolute;
+			  top: -7px;
+			  left: 0;
+			  height: 100%;
+			  width: 51%;
+			  background: $big-game;
+			  -webkit-transform: skew(0deg, -18deg);
+			  -moz-transform: skew(0deg, -18deg);
+			  -ms-transform: skew(0deg, -18deg);
+			  -o-transform: skew(0deg, -18deg);
+			  transform: skew(0deg, -18deg);
+			}
+			&:after {
+			  content: '';
+			  position: absolute;
+			  top: -7px;
+			  right: 0;
+			  height: 100%;
+			  width: 50%;
+			  background: $big-game;
+			  -webkit-transform: skew(0deg, 18deg);
+			  -moz-transform: skew(0deg, 18deg);
+			  -ms-transform: skew(0deg, 18deg);
+			  -o-transform: skew(0deg, 18deg);
+			  transform: skew(0deg, 18deg);
+			}
+		}​
+	
+		.timestamp {
+			display: inline-block;
+			font-size: .9em;
+		}
+	}
+	
+
+	
+
+	.user-info {
+		background: #dadada; /* Old browsers */
+		background: -moz-linear-gradient(left,  #dadada 0%, #ffffff 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,#dadada), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  #dadada 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  #dadada 0%,#ffffff 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  #dadada 0%,#ffffff 100%); /* IE10+ */
+		background: linear-gradient(to right,  #dadada 0%,#ffffff 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dadada', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+		border-bottom: 1px solid #ccc;
+		padding: 0 5px;
+
+		.avatarWrapper, .rank, .username-container { 
+			display: inline-block; 
+			vertical-align: top;
+		}
+		
+	
+
+		.avatarWrapper {
+			// -webkit-box-shadow: 2px 2px 3px -1px rgba(122,122,122,1);
+			// -moz-box-shadow: 2px 2px 3px -1px rgba(122,122,122,1);
+			// box-shadow: 2px 2px 3px -1px rgba(122,122,122,1);
+			height: 60px;
+			width: 60px;
+			margin-top: -10px;
+  			margin-bottom: -13px;
+  			margin-left: 5px;
+  			border: 2px solid white;
+		}
+
+		.username-container {
+			width: 160px;
+			white-space: nowrap;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		}
+		.name { 
+			font-weight: 700; 
+			font-size: .9em;
+			width: 160px;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+			
+		}
+		.username { 
+			font-weight: 300; 
+			font-size: .9em;
+		}
+
+		a {
+			color: #333;
+		}
+
+	}
+	.post-data {
+		min-height: 91px;
+		padding-top: 10px;
+
+		.weapon-icon {
+			height: 40px;
+			width: 40px;
+			margin-top: 10px;
+			color: #ffffff;
+		}
+	
+		.species {
+			font-size: 1.1em;
+			font-weight: 700;
+		}
+		.location { 
+			font-size: .9em; 
+			font-weight: 300;
+		}
+		.caption {
+			font-size: .8em;
+			color: #999;
+			transition: color 0.5s ease;
+			&:hover { color: #333; }
+		}
+	}
+
+	.social {
+		color: #999;
+		padding-top: 1px;
+		padding-bottom: 1px;
+		background-color: #eee;
+
+		a { color: #999; }
+		
+		img {
+			height: 24px;
+			fill: #999 !important;
+
+			path {
+				fill: #999 !important;
+				stroke: #999;
+				color: #999;
+			}
+		}
+		.likes { float: left; 
+			.likes-count{margin-bottom: 10px;}
+			svg{padding-top: 5px;
+				} 
+		}
+		.comments { float: right;
+			.comments-count{margin-bottom: 10px;}
+			svg{padding-top: 5px;} 
+		}
+
+	}
+}
+
+@media (min-width: 1600px) {
+	.feed-container .col-md-4:nth-child(3n+1) { clear: none; }
+	.feed-container .col-md-4:nth-child(4n+1) { clear: both; }
+}
+
+@media (max-width: 991px) {
+	.feed-container .col-md-4:nth-child(3n+1) { clear: none; }
+	.feed-container .col-md-4:nth-child(2n+1) { clear: both; }
+}
+
+@media (max-width: 767px) {
+	.post .post-image {
+		height: 290px;
+	}
+}
+
+@media (min-width: 992px) {
+	.post .post-image{
+		max-height: 220px;
+	}
+
+}
+
+@media (max-width: 1199px) {
+	.post .post-image{
+		max-height: 210px;
+	}
+
+}
+
+// $big-game: red;
+// $small-game: red;
+// $waterfowl: orange;
+// $upland-bird: orange;
+// $freshwater: blue;
+// $saltwater: blue;
+// $reptile: green;
+// $scenic: brown;
+// $trailcam: #666;
+
+.post-default {
+	.post-image {border-bottom-color: $dim; }
+	.ribbon {background-color: $dim; }
+	.species { color: $dim; }
+	.weapon-icon { background-color: $dim; }
+	.ribbon .chevron:before { background: $dim; }
+	.ribbon .chevron:after { background: $dim; }
+}
+
+.post-big-game,
+.post-small-game {
+	.post-image {border-bottom-color: $big-game; }
+	.ribbon {background-color: $big-game; }
+	.species { color: $big-game; }
+	.weapon-icon { background-color: $big-game; }
+	.ribbon .chevron:before { background: $big-game; }
+	.ribbon .chevron:after { background: $big-game; }
+}
+
+.post-waterfowl,
+.post-upland-bird {
+	.post-image {border-bottom-color: $waterfowl; }
+	.ribbon {background-color: $waterfowl; }
+	.species { color: $waterfowl; }
+	.weapon-icon { background-color: $waterfowl; }
+	.ribbon .chevron:before { background: $waterfowl; }
+	.ribbon .chevron:after { background: $waterfowl; }
+}
+
+.post-freshwater,
+.post-saltwater {
+	.post-image {border-bottom-color: $freshwater; }
+	.ribbon {background-color: $freshwater; }
+	.species { color: $freshwater; }
+	.weapon-icon { background-color: $freshwater; }
+	.ribbon .chevron:before { background: $freshwater; }
+	.ribbon .chevron:after { background: $freshwater; }
+}
+
+.post-reptile {
+	.post-image {border-bottom-color: $reptile; }
+	.ribbon {background-color: $reptile; }
+	.species { color: $reptile; }
+	.weapon-icon { background-color: $reptile; }
+	.ribbon .chevron:before { background: $reptile; }
+	.ribbon .chevron:after { background: $reptile; }
+}
+
+.post-scenic {
+	.post-image {border-bottom-color: $scenic; }
+	.ribbon {background-color: $scenic; }
+	.species { color: $scenic; }
+	.weapon-icon { background-color: $scenic; }
+	.ribbon .chevron:before { background: $scenic; }
+	.ribbon .chevron:after { background: $scenic; }
+}
+
+.post-trailcam {
+	.post-image {border-bottom-color: $trailcam; }
+	.ribbon {background-color: $trailcam; }
+	.species { color: $trailcam; }
+	.weapon-icon { background-color: $trailcam; }
+	.ribbon .chevron:before { background: $trailcam; }
+	.ribbon .chevron:after { background: $trailcam; }
+}
+

@@ -1,0 +1,56 @@
+<div class="promo-campaign duck-campaign" data-bind="css: promoCss">
+	<div class="buffer"></div>
+	<div class="promo-wrapper " >
+
+		<div class="container">
+
+			<div class="topbar">
+				<div class="promo-spacer"></div>
+				<span class="promo-headline">
+					<span class="hd-1" data-bind="text:headlineText"></span>
+
+				</span>
+				<button data-bind="click: expandCampaign " class="toggle btn btn-warning" >
+					<span data-bind="text: expandTitle()"></span>
+				</button>
+
+			</div>
+			
+			<div class="photogroup row">
+				<ul class="col-md-10 col-md-offset-1" data-bind="foreach: promoHunt">
+					<li class="promoHunt col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						
+						<div class="promoPhoto">
+							<div class="photoWrapper">
+								<img class="promoPhoto img-responsive" data-bind="attr:{src: photos()[0].url}, click: $parent.openSeason" />
+							</div>
+						</div>
+
+						<div class="promo-info">
+							<span class="promo-city" data-bind="if:city">
+								<span data-bind="text:city"></span>
+							</span>
+
+							<span class="promo-city" data-bind="if:state">
+								<span>, </span>
+								<span data-bind="text:stateAbbrv"></span>
+							</span>
+
+							<div data-bind="if:humanFriendlyTime">
+								<span class="datestamp" data-bind="text:humanFriendlyTime"></span><br />
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="logline">
+			View the Duck Season timeline now!
+			
+			<button data-bind="click: openSeason" class="toggle btn btn-warning GObutton" >
+				<span>See them all!</span>
+			</button>
+		
+			</div> 
+		</div>
+	</div>
+</div>

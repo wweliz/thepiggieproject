@@ -1,0 +1,16 @@
+<div class="user-trophies">
+
+	<div data-bind="ifnot:feedError">
+		<span>user has trophies</span>
+
+		<!-- <div class="row trophy-feed-container" data-bind="foreach: trophyArray">
+			<pre data-bind="text: ko.toJSON($data)"></pre>
+			<badge params="{badge:$data}" class="col-md-4 col-sm-6 small-gutter"></badge>
+		</div> -->
+	</div>
+
+	<div data-bind="if:feedError">
+		<span data-bind="text:errorMsg"></span>
+	</div>
+
+</div>

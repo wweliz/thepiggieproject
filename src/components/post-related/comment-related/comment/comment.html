@@ -1,0 +1,34 @@
+<!-- ko ifnot: isDeleted -->
+
+	<div class="comment" data-bind="with:comment">
+
+		<a class="avatarWrapper" data-bind="attr: { href: $parent.userUrl }"> <img class="avatar" data-bind="attr:{src: avatar}"> </a>
+
+		<div class="comment-text">
+			<div class="dropdown" style="float:right;">
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+					<!--ko if: $parent.isDeletable -->
+						<span class="glyphicon-minus"></span>
+					<!-- /ko -->
+					<!--ko ifnot: $parent.isDeletable -->
+						<span class="caret"></span>
+					<!-- /ko -->
+				</button>
+
+				<ul class="dropdown-menu scrollable-menu" role="menu">
+					<li role="presentation"><a role="menuitem" tabindex="-1" data-bind="if:$parent.isDeletable, click:$parent.deleteComment">Delete Comment</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" data-bind="ifnot:$parent.isCurrentUser, click:$parent.flagComment">Report Abuse</a></li>
+				</ul>
+			</div>
+
+			<a data-bind="attr: { href: $parent.userUrl }"><span class="username" data-bind="text: username"></span></a> <span class="linebreak">|</span> <span class="timestamp" data-bind="text: $parent.prettifyTime"></span><br />			
+			<div class="comment-body" data-bind="html: $parent.commentText"></div>
+		</div>
+
+		<div class="clr"></div>
+
+	</div>
+
+<!-- /ko -->
+
+<span data-bind="if:isDeleted">This comment has been deleted.</div>

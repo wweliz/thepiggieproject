@@ -1,0 +1,14 @@
+<div class="feed-container">
+
+	<button class="filter-feed text-right btn btn-default">
+		<span>Filter</span>
+		<i class="fa fa-filter"></i>
+	</button>
+
+	<div class="row feed-container" data-bind="foreach: posts">
+		<post params="{post:$data}" class="col-md-3 col-sm-4 small-gutter"></post>
+	</div>
+
+	<span data-bind="text: feedError"></span>
+
+</div>

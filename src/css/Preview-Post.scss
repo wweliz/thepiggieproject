@@ -1,0 +1,147 @@
+/* PREVIEW POST PAGE STYLING -- VIEW POST WHILE UNAUTHENTICATED */
+.nav-right {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	a.download-app, a.login { margin-right: 10px; }
+}
+
+.preview-post {
+	.user-info {
+		margin-top: 8px;
+		position: relative;
+
+		.avatarWrapper{
+			height: 70px;
+			width: 70px;
+			margin: 0 8px 0 0;
+			display: inline-block;
+		}		
+
+		.username {
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+	}
+
+	.ribbon {
+		z-index: 10;
+		width: 35px;
+		position: absolute;
+		right: 25px;
+		background: $big-game;
+		color: #fff;
+
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			position: relative;
+			z-index: 5;
+			
+			li {
+				padding: 2px 0;
+				text-align: center;
+
+				i {
+					font-size: 1.42em;
+				}
+			}
+		}
+
+		.chevron {
+			position: relative;
+			text-align: center;
+			padding: 5px;
+			margin-bottom: -10px;
+			height: 1px;
+			width: 100%;
+		
+			&:before {
+				content: '';
+				position: absolute;
+				top: -7px;
+				left: 0;
+				height: 100%;
+				width: 51%;
+				background: $big-game;
+				-webkit-transform: skew(0deg, -18deg);
+				-moz-transform: skew(0deg, -18deg);
+				-ms-transform: skew(0deg, -18deg);
+				-o-transform: skew(0deg, -18deg);
+				transform: skew(0deg, -18deg);
+			}
+			
+			&:after {
+				content: '';
+				position: absolute;
+				top: -7px;
+				right: 0;
+				height: 100%;
+				width: 50%;
+				background: $big-game;
+				-webkit-transform: skew(0deg, 18deg);
+				-moz-transform: skew(0deg, 18deg);
+				-ms-transform: skew(0deg, 18deg);
+				-o-transform: skew(0deg, 18deg);
+				transform: skew(0deg, 18deg);
+			}
+		}​
+	
+		.timestamp {
+			display: inline-block;
+			font-size: .9em;
+		}
+	}
+}
+
+.register-sidebar {
+	a.fb-button {
+		background-color: $facebook-color;
+		border-color: $facebook-color;
+		color: #fff;
+		padding-left: 40px;
+		text-shadow: none;
+		width: 100%;
+
+		.fa-facebook {
+			margin-right: 10px;
+			border: 1px solid #fff;
+			padding: 3px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	input {
+		width: 100%;
+		margin: 4px 0;
+	}
+	
+	.note { font-size: 1em; }
+
+	.regInput {
+		position: absolute !important;
+		clip: rect(0, 0, 0, 0);
+		width: 1px !important;
+		height: 1px !important;
+		padding: 0 !important;
+		margin: -1px !important;
+		overflow: hidden;
+		border: 0;
+	}
+
+	.registerBtn, .loginBtn { width: 100%; }
+}

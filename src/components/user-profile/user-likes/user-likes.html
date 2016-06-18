@@ -1,0 +1,22 @@
+<div class="user-likes">
+	
+	<div data-bind="ifnot:feedError">
+		<button class="filter-feed text-right btn btn-default">
+			<span>Filter</span>
+			<i class="fa fa-filter"></i>
+		</button>
+
+		<div class="row" data-bind="foreach: likesArray">
+			<post params="{post:$data}" class="col-md-4 col-sm-6 small-gutter"></post>
+		</div>
+	</div>
+
+	<div data-bind="if:feedError">
+		<div class="well text-center">
+			<h3>No Results Found</h3>
+			<span data-bind="visible: !isCurrentUser">This user has not liked any posts.</span>
+			<span data-bind="visible: isCurrentUser">You have not liked any posts.</span>
+		</div>		
+	</div>
+
+</div>

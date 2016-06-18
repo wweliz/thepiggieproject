@@ -1,0 +1,71 @@
+<div class="container">
+	
+	<title data-bind="pageTitle: 'Account Settings' "></title>
+
+	<div class="user-settings">
+		<!-- <h2>Your Account Settings</h2> -->
+
+		<!-- <div class="bs-callout bs-callout-info row">
+
+			<div class="col-md-9 col-sm-8">
+				<h4>Billing and Premium Account Settings</h4>
+				<p>Here is a nice description of premium settings.</p>
+			</div>
+
+			<div class="col-md-3 col-sm-4">
+				<a href="#/settings/billing" class="btn btn-primary">View Settings</a>
+			</div>
+
+		</div> -->
+
+		<div class="bs-callout bs-callout-info">
+			<h3>User Account Information</h3>
+			<update-user-component></update-user-component>
+		</div>
+
+		<div class="bs-callout bs-callout-info">
+			<h3>User Privacy Settings</h3>
+
+			<fieldset>
+				<div>
+					<input type="radio" name="public" data-bind="checked:isPrivate, checkedValue:false, event: { change: updatePrivacySettings }">
+					<label for="public">Public Account</label>
+
+					<ul>
+						<li>Users will be able to view your posts and data</li>
+						<li>Users will be able to follow you, like and comment on your posts, and add your posts to their feed</li>
+					</ul>
+				</div>
+
+				<div>
+					<input type="radio" name="private" data-bind="checked:isPrivate, checkedValue:true, event: { change: updatePrivacySettings }">
+					<label for="private">Private Account</label>
+
+					<ul>
+						<li>Users will request to follow you and will not be able to engage with your post or profile until you have chosen to accept</li>
+						<li>Only users who you have allowed can like and comment on your posts, and add your posts to their feed</li>
+						<li>Posts that you make to groups will be visible to group members based on the group's settings</li>
+					</ul>
+				</div>
+			</fieldset>
+
+			<div class="alert alert-success" data-bind="visible:alertPrivacySuccess">
+				<span>Your privacy setting have been updated.</span>
+				<button type="button" class="close" data-bind="click: resetPrivacyUpdateMsg">&times;</button>
+			</div>
+
+
+			<div class="alert alert-error" data-bind="visible:alertPrivacyFailure">
+				<span>Your privacy setting have been updated.</span>
+				<button type="button" class="close" data-bind="click: resetPrivacyUpdateMsg">&times;</button>
+				</div>
+		</div>
+
+		<div class="bs-callout bs-callout-info">
+			<h3>Delete and Remove your Account</h3>
+			<p>Click the button below to permanently delete your Hembow Account.</p>
+			<button data-bind="click: deleteAccount" class="btn btn-warning">Delete Account</button>
+		</div>
+
+	</div>
+</div>

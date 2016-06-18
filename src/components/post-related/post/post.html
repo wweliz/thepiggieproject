@@ -1,0 +1,145 @@
+<div class="post post-weapon-rifle" data-bind="with:post, css: postTypeClass">
+	<div class="row">
+
+		<div class="col-xs-8">
+			<span class="species" data-bind="text: postTitle"></span>
+		</div>
+
+
+		<div class="col-xs-4 text-right">
+			<div data-bind="if:humanFriendlyTime">
+				<span class="datestamp" data-bind="text:humanFriendlyTime"></span><br />
+			</div>
+		</div>
+	</div>
+
+	<a data-bind="attr:{href:'#/detailed-post/'+id()}">
+		<div class="post-image">
+			<img class="post-img img-responsive" data-bind="attr:{src: photos()[0].url}"/>
+		</div>
+	</a>
+
+	<div class="ribbon" data-bind="if: ribbon">
+		<a data-bind="attr:{href:'#/detailed-post/'+id()}" class="text-center">
+			<ul>
+				
+				<li data-bind="if:weapon">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#FFFFFF" class="link">
+						<line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="25" y1="8" x2="25" y2="2"/>
+						<line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="25" y1="48" x2="25" y2="42"/>
+						<line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="42" y1="25" x2="48" y2="25"/>
+						<line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="2" y1="25" x2="8" y2="25"/>
+						<circle fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="25" cy="25" r="20"/>
+						<circle cx="25" cy="25" r="7" fill="#FFFFFF"/>
+					</svg>
+				</li>
+
+				<li data-bind="if:location">
+
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#FFFFFF" class="link">
+						<rect fill="none" width="20" height="20"/>
+						<path d="M25,1C16.178,1,9,8.178,9,17c0,14.114,14.625,30.949,15.248,31.659C24.438,48.876,24.712,49,25,49  c0.31-0.021,0.567-0.127,0.757-0.347C26.38,47.931,41,30.813,41,17C41,8.178,33.822,1,25,1z M25,24c-3.313,0-6-2.687-6-6  s2.687-6,6-6s6,2.687,6,6S28.313,24,25,24z" fill="#FFFFFF"/>
+					</svg>
+
+				</li>
+				<li data-bind="if:journal">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#FFFFFF" class="link">
+						<path d="M40.873,21.287L28.713,9.127l5.132-7.697l14.725,14.725L40.873,21.287z" fill="#FFFFFF"/>
+						<path d="M28.194,11.438C24.718,14.06,20.483,15,13,15h-0.82l-0.161,0.804c-1.855,9.279-8.145,27.511-8.889,29.651l18.162-18.162  c0.052-0.052,0.117-0.079,0.176-0.117c-0.176-0.362-0.283-0.764-0.283-1.193c0-1.517,1.23-2.747,2.747-2.747s2.747,1.23,2.747,2.747  c0,1.518-1.229,2.748-2.747,2.748c-0.388,0-0.756-0.082-1.09-0.228c-0.042,0.07-0.076,0.144-0.136,0.204L4.544,46.87  c2.133-0.741,20.372-7.033,29.652-8.889L35,37.821v-0.82c0-7.483,0.94-11.719,3.563-15.195L28.194,11.438z" fill="#FFFFFF"/>
+					</svg>
+
+				</li>
+			</ul>
+		</a>
+		<div class="chevron"></div>
+	</div>
+	
+	<div class="user-info no-gutter" >
+		<a class="avatarWrapper" data-bind="attr:{href:'#/profile/'+userId()}">
+			<img class="avatar" data-bind="attr:{src: avatar}">
+		</a>
+
+		<!-- <div data-bind="if:rank">
+			<img data-bind="attr:{src:rank}">
+		</div> -->
+		
+		<div class="username-container">
+			<a data-bind="attr:{href:'#/profile/'+userId()}" >
+				<span class="name" data-bind="text: name"></span><br/>
+				<span class="username" data-bind="text: username"></span>
+			</a>
+		</div>
+	</div>
+
+	<div class="post-data" style="background-color: #fff;">
+		<div class="row small-gutter">
+
+			<div class="col-xs-10">
+				<span data-bind="if:locationLabel()">
+					<span data-bind="text:locationLabel"></span>
+				</span>
+				<div class="caption">
+					<span class="truncate" data-bind="text:caption"></span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="clr"></div>
+
+	<div class="social small-gutter row">
+
+		<a data-bind="attr:{href:'#/detailed-post/'+id()}">
+			<div class="comments">
+				<span data-bind="if: commentCount() != 0">
+					<span class="comments-count" data-bind="text: commentCount"></span>
+				</span>
+				<!-- ko if: commentCount() !=0 -->
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#999" class="link">
+
+					<path d="M25,4C12.318,4,2,12.972,2,24c0,6.187,3.334,12.065,8.951,15.839c-0.133,1.053-0.665,3.601-2.769,6.585l-1.105,1.567  L9.054,48c5.432,0,9.103-3.33,10.309-4.604C21.197,43.797,23.091,44,25,44c12.682,0,23-8.972,23-20S37.682,4,25,4z" fill="#999"/>
+				</svg>
+				<!-- /ko -->
+				<!-- ko if: commentCount() ==0 -->
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#999" class="link">
+
+					<path fill="none" stroke="#999" stroke-width="1.8586" stroke-miterlimit="10" d="M47,24c0,10.493-9.85,19-22,19  c-2.076,0-4.085-0.248-5.99-0.712c0,0-3.807,4.739-10.01,4.712c3.001-4.258,2.996-7.673,2.996-7.673C6.541,35.869,3,30.292,3,24  C3,13.507,12.849,5,25,5C37.15,5,47,13.507,47,24z"/>
+				</svg>
+				<!-- /ko -->
+
+				
+			</div>
+		</a>
+
+		<div class="likes">
+			<!-- ko if: !$parent.processingLike() -->
+				<!-- ko if: $parent.currentUserLike() != undefined -->
+					
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" data-bind="click: $parent.likeOrUnlike" class="link">
+						<path d="M36,45H17c-4.962,0-9-4.037-9-9v-9.4c0-1.938,0.567-3.714,1.687-5.281L20.892,5.912C21.588,4.742,22.769,4,24,4  c1.661,0,4,1.427,4,4.6c0,0.908-0.248,1.518-0.488,2.108c-0.057,0.139-0.116,0.285-0.175,0.442  c-0.375,1.051-2.357,5.524-3.395,7.851c3.076,0.004,9.896,0.023,12.488,0.099h0.001c2.85,0,4.569,1.932,4.569,3.799  c0,0.642-0.107,1.516-0.197,2.131C41.685,25.556,43,26.678,43,28.7c0,1.404-0.674,2.446-1.324,3.126  C42.337,32.433,43,33.392,43,34.8c0,2.007-1.382,3.225-2.372,3.84C40.823,39.163,41,39.866,41,40.7C41,42.496,39.098,45,36,45z" fill="#999"/>
+					</svg>
+
+
+				<!-- /ko -->
+				<!-- ko if: !$parent.currentUserLike() -->
+					
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" data-bind="click: $parent.likeOrUnlike" class="link">
+						<path fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="  M22.4,20c0,0,3.5-7.8,4-9.2C26.7,10,27,9.5,27,8.6C27,6,25.1,5,24,5c-0.8,0-1.7,0.5-2.3,1.5L10.5,21.9c-1,1.4-1.5,3-1.5,4.7V36  c0,4.4,3.6,8,8,8c0,0,17,0,19,0c2.5,0,4-2,4-3.3c0-1.5-0.7-2.5-0.7-2.5s2.7-1,2.7-3.4c0-2.1-2-2.9-2-2.9s2-1.1,2-3.2  c0-2.3-2.3-3.1-2.3-3.1s0.3-1.7,0.3-2.7c0-1.3-1.3-2.8-3.6-2.8C33,20,22.4,20,22.4,20z"/>
+					</svg>
+				<!-- /ko -->
+			<!--/ko -->
+			<!-- ko if: $parent.processingLike() -->
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" fill="#535353" height="20" width="20">
+						<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="25" cy="25" r="5"/>
+						<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="41" cy="25" r="5"/>
+						<circle fill="none" stroke="#535353" stroke-width="2" stroke-miterlimit="10" cx="9" cy="25" r="5"/>
+					</svg>
+			<!-- /ko -->
+			<span data-bind="if: $parent.likesCount() != 0">
+				<span class="likes-count" data-bind="text: $parent.likesCount"></span>
+			</span>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,8 @@
+<!-- ko with:data -->
+        <div data-bind="css:css, attr:{id:id}">
+            <label class="input-label" data-bind="text:label"></label>
+            <!-- ko foreach:units -->
+                <input data-bind="attr:{id:id},value:$parents[1]['unitValue'+$index()]"><span data-bind="text:name"></span>
+            <!-- /ko -->
+        </div>
+<!-- /ko -->

@@ -1,0 +1,629 @@
+/* POST A HUNT PAGE STYLING */
+.post-a-hunt {
+	margin-top: -50px;
+
+	.postError {
+		margin-top: 10px;
+	}
+
+	#bg {
+		position: fixed; 
+		top: -50%; 
+		left: -50%; 
+		width: 200%; 
+		height: 200%;
+	}
+
+	#bg img {
+		position: absolute; 
+		top: 0; 
+		left: 0; 
+		right: 0; 
+		bottom: 0; 
+		margin: auto; 
+		min-width: 50%;
+		min-height: 50%;
+	}
+
+	.wrapper {
+		background-color: rgba(212, 206, 200, 0.8);
+		//background-color: rgba(255, 255, 255, 0.8);
+
+		border-top: 3px solid $kalachiRed;
+		margin-top: 70px;
+		padding: 15px;
+		position: relative;
+	}
+
+	h3 { width: 100%; text-align: left; clear: both; }
+
+	p { line-height: 1.3em; }
+
+	dropzone-photo-uploader {
+		display: block;
+
+		.dz-message {
+			width: 100%;
+			text-align: center;
+			color: #4e3e2a;
+		}
+
+		form { height: 300px; }
+	}
+
+}
+
+ul.postTypes {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+
+	li.postType {
+		display: inline-block;
+		width: 80px;
+		text-align: center;
+		vertical-align: top;
+		margin: 5px auto;
+		background-color: rgba(212, 206, 200, 0.4);
+		padding: 10px 0;
+
+		&:hover { background-color: rgba(212, 206, 200, 0.7); }
+
+		span {
+			font-size: .8em;
+			line-height: .9em;
+			width: 100%;
+			display: block;
+			word-wrap: normal;
+			margin-top: 3px;
+			height: 25px;
+			text-align: center;
+			white-space: normal;
+		}
+	}
+}
+.icon-selection-container {
+	img-with-callback {
+		margin: 0 10px;
+	}
+}
+
+
+.update-hunt-post {
+
+	.btn-brand {
+		background-color: $kalachiRed;
+		border: none;
+		width: 100%;
+		margin-top: 10px;
+		color: #fff;
+	}
+
+	//LEFT COLUMN STYLING
+
+	.img-from-post {
+		width: 445px;
+	}
+
+	#dropzone-container {
+	  height: 350px;
+	  width: 97%;
+	  text-align:center;
+	  margin:3px;
+	}
+	.photoCaption img { margin-bottom: 10px; }
+
+	caption-input {
+		textarea { padding: 5px; }
+
+		.required-text {
+			font-style: italic;
+			color: $kalachiRed;
+		}
+	}
+
+	.post-title {
+		margin-bottom: 5px;
+		h1, h3 { margin: 0; }
+	}
+
+	//TAB GROUP STYLING
+	.tabpanel {
+		ul.nav-tabs li {
+			background-color: #eee;
+			a { color: #666;
+				svg {
+					fill: #777;
+				}
+			 }
+			&.active a { 
+				color: $kalachiRed;
+
+				&:hover {
+					color: $kalachiRed;
+
+					svg {
+						fill: $kalachiRed;
+					}
+
+				}
+
+				svg {
+					fill: $kalachiRed
+				} 
+			}
+		}
+
+		.tab-pane {
+			background-color: rgba(255, 255, 255, 1.0);
+			padding: 3px;
+			min-height: 350px;
+
+			.postTypes { padding: 10px; }
+		}
+	}
+
+
+	img.post-type-icon {
+		height: 40px;
+		width: 40px;
+		cursor: pointer;
+		margin: 7px 0 10px;
+	}
+
+	a.hidden { display: none; }
+
+	.animal-form {
+		border: 1px solid #b0aeab;
+		padding: 10px;
+		width: 100%;
+		margin-bottom: 10px;
+		background-color: $brown-light;
+
+		.input-label {
+			width: 100%;
+			text-align: left;
+			display: inline-block;
+		}
+
+		input { margin: 0 3px 5px 0; }
+
+		.radio,
+		.checkbox { padding-left: 0;
+			&.banded {
+				span { font-weight: bold; }
+			}
+		 }
+
+	}
+
+	.add-animal-form-div {
+		border: 1px dotted black;
+		text-align: center;
+		vertical-align: middle;
+		width: 50%;
+		min-height: 20px;
+		padding: 12px;
+		cursor: pointer;
+		background-color: $freshwater;
+		margin: 0 auto;
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+	}
+
+	#geo-solunar {
+		.location-time {
+			list-style: none;
+
+				li {
+					display: inline-block;
+
+					input {
+						border: 1px solid #EEE;
+						margin: 3px 0;
+					}
+				}
+			}
+		#places-search-box {
+				width: 100%;
+			}
+
+			.bs-callout {
+				margin: 0;
+			}
+
+		weather-details {
+			display: table;
+			width: 100%;
+			padding: 10px 0;
+			// border: 1px dotted black;
+			// border: 1px solid #b0aeab;
+			border-top: 1px solid #ececec;
+			padding: 10px;
+			width: 100%;
+			margin-bottom: 10px;
+			// background-color: $brown-light;
+			line-height: 2;
+			font-size: 14px;
+
+			.row {
+				margin: 0 -5px;
+			}
+
+                        .weather-stats-first-row {
+							font-size: 2.5em;
+							margin-bottom: 15px;
+
+                        }
+
+                        .weather-stats-second-row {
+							font-size: 1.7em;
+							margin-bottom: 20px;
+
+                        }
+
+			.editable-label {
+				background: none;
+				border: none;
+				border-radius: 5px;
+				color: #777;
+				text-align: center;
+				padding: 0 !important;
+				transition: all 0.2s ease-in-out;
+				&:focus {
+					color: #555;
+				}
+				&:hover {
+					color: #555;
+				}
+			}
+
+			.unit-marker {
+				color: #777;
+				margin-top: 2px;
+			}
+
+			#temp-input,
+			#humidity-input {
+				width: 2em;
+			}
+
+			#pressure-input {
+				width: 5em;
+			}
+
+			#wind-speed-input {
+				width: 3em;
+			}
+
+			#wind-direction-input {
+				width: 2em;
+			}
+
+			.well {
+				min-height: 200px;
+				margin: 0 -10px;
+				
+				.inner {
+                                        height: 75px;
+
+					.editable-label,
+					.unit-marker {
+						float: left;
+						height: 100%;
+					}
+
+					span.weatherLabel { 
+						position: absolute;
+						bottom: 5px;
+						color: #666;
+					}
+				}
+			}
+			.icon-selection-container {
+				img-with-callback {
+					float: left;
+				}
+			}
+			.icon-text { font-weight: bold; }
+
+				.conditions { img { height: 100px; width: 100px; } }
+
+			.weatherLabel {
+				display: inline-block;
+				font-size: 14px;
+			}
+
+			.moon {
+				width: 80px;
+				height: 80px;
+				margin-top: 5px;
+			}
+		}
+	}
+
+// weapon tab //
+	#weaponconfirm{
+		width: 96%;
+		text-align: left;
+		margin-left: 2%;
+
+		.weapon-selected{
+			color: #aaa;
+		}
+
+		
+		.user-name-and-handle {
+			display: inline-block;
+
+			h3 { margin-top: 0 }
+		}
+
+		
+		.weapon-img{
+				color: $kalachiRed;
+
+				svg {
+					fill: $kalachiRed;
+				}
+			}
+
+			img {
+				float: left;
+				fill: $kalachiRed;
+				margin-right: 10px;
+
+				svg{
+					fill: $kalachiRed;
+				}
+			}	
+	
+
+			span{
+				//margin-top: -28px;
+				float: left;
+				display: inline-block;
+
+		}
+
+		.weapon-pre{
+			text-align: left;
+			min-height: 50px;
+			line-height: 30px;
+			margin-top: 10px;
+			border-bottom: $kalachiRed solid thin;
+			margin-bottom: 15px;
+			display: block;
+
+
+		}
+	}
+
+	.dropdown {
+	margin: 10px 0;
+	display: block;
+	width: 80%;
+
+		button {
+			width: 100%;
+			text-align: left;
+
+			.caret {
+				float: right;
+				margin-top: 5px;
+			}
+		}
+	}
+
+	#journal {
+
+		textarea { width: 100%; }
+
+		.journalInput {
+			min-height: 315px;
+			max-width: 525px !important; //best column width for readability
+			font-size: 1.1em;
+			line-height: 1.6em;
+		}
+	}
+
+	.post-action { margin-top: 10px; }
+
+
+
+	//friends related 
+
+	.friend-search-title{
+		padding: 0 10px 0 5px;
+		color: #fff;
+		line-height: 20px;
+		font-size: 12px;
+	}
+
+	.friend-search{
+		margin-left: auto;
+		margin-right: auto;
+		color: $kalachiRed;
+		padding: 10px;
+		margin-bottom: 10px;
+		width: 100%;
+		border-bottom: 1px solid $kalachiRed;
+	}
+
+	#friend-search-bar{ 
+		width: 110%;
+		margin-left: -5%;
+
+	}
+
+	.nav-tabs {
+		li{margin-right: 0px;
+			width: 20%;
+			text-align: center;
+			svg{
+				margin-left: auto;
+			}
+			.active{border: none;
+			}
+		}
+
+		svg{
+			height: 20px;
+			fill: #fff;
+			margin-top: 5px;
+		
+		}
+
+		svg, .tab-label {
+			display: inline-block;
+		}
+		.tab-label { vertical-align: super; }
+
+		a { color: #fff; margin: -20 0 0 0; }
+		a:hover svg{ fill: #666 
+		}
+
+		.active {
+			svg { fill: $kalachiRed; }
+		}
+	}
+
+	
+	.new-weapon-button-wrapper {
+		display: inline-block;
+		width: 100%;
+
+		.new-weapon {
+			float: right;
+		}
+	}
+
+	.friend-row-wrapper{
+		max-height: 370px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
+	.user-weapon-row-wrapper {
+		width: 100%;
+		max-height: 370px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
+	.wordcount{
+		float: right;
+	}
+
+	.post-hunt-description{
+		color: $kalachiRed;
+	}
+
+	.time-input{
+		color: #999;
+	}
+
+	.weather-readout .well{
+		// border: 1px solid $kalachiRed;
+		background-color: #fff;
+		border: none;
+	}
+
+	.post-tab-name{
+		font-size: 30px;
+		color: $kalachiRed;
+		margin: 10px;
+	}
+
+	.journal-length{
+		float: right;
+	}
+
+	.addmorebutton{
+		width: 120px;
+		// line-height: 20px;  DOESN'T WORK How do I make shorter?
+	
+		background-color: #06f;
+		color: #fff;
+		border: none;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+
+		
+	}
+
+	.nextstepbutton{
+		width: 120px;
+		// line-height: 20px;  DOESN'T WORK How do I make shorter?
+	
+		background-color: #060;
+		color: #fff;
+		border: none;
+
+		
+	}
+
+	
+	
+}
+
+
+// BREAKING MY OWN RULE.
+
+
+
+.btn-close{
+		height: 24px;
+		line-height: 20px;
+		text-align: center;
+		color: #06f;
+		background-color: transparent;
+
+		.glyphicon{
+			color: $kalachiRed;
+			padding-right: 4px;
+		}
+
+	}
+
+.new-weapon{
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+.weapon-type-selection {
+
+
+	.weapon-data {
+		margin-bottom: 3px;
+		font-weight: 600;
+
+		
+		span {
+			margin-left: 20px;
+		}
+		.weapon-label {
+			font-weight: 400;
+			margin-left: 0;
+			display: inline-block;
+			width: 150px;
+			
+		}
+		.yearPrompt {
+			font-weight: 400;
+			font-size: .95em;
+			margin-left: 0;
+		}
+	}
+
+	.btn {
+		margin-top: 15px;
+	}
+}
+
+
+
+
+

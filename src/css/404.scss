@@ -1,0 +1,30 @@
+/* 404 PAGE STYLING */
+.fourFOUR {
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: -10;
+	background: url(../../images/blue-mountains.jpeg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.fourFOUR-inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	text-align: center;
+	border-bottom: 3px solid orange;
+
+	h1 {
+		font-size: 100px;
+		line-height: 80px;
+		color: #fff;
+	}
+}

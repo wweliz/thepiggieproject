@@ -1,0 +1,22 @@
+<h3>View Your Post Data</h3>
+<!-- ko if: postsLoaded() -->
+<div class="heatmap">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <div class="mapDiv" data-bind="heatmap: $data"></div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="postDiv">
+            <h4>Post Detail</h4>
+
+            <!-- ko if: selectedPost() -->
+            <div data-bind="with: selectedPost()">
+                <post params="{post: $data}" class="col-xs-12 small-gutter"></post>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: !selectedPost() -->
+            <div>Select a marker on the map to view the post summary here</div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
+<!-- /ko -->

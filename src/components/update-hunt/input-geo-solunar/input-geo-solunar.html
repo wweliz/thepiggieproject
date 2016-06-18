@@ -1,0 +1,45 @@
+<div class="input-geo-solunar">
+
+	<div data-bind="if:needLocation">
+		<need-location></need-location>
+	</div>
+
+	<div data-bind="if:haveLocation">
+
+		<div class="date-time">
+			<label for="huntDate">Hunt Date</label>
+			<input type="text" id="date" data-bind="textinput:huntDate" />
+
+			<label for="huntTime">Hunt Time</label>
+			<input type="text" id="date" data-bind="textinput:huntTime" />
+		</div>
+
+		<div class="temp-data">
+			<label for="temp">Temp at time of kill</label>
+			<input type="text" id="temp" data-bind="textinput:temp" />
+			<span>&#176;F</span>
+
+			<span data-bind="text:tempHigh"></span><span>&#176;F</span>
+			<span data-bind="text:tempLow"></span><span>&#176;F</span>
+		</div>
+
+		<div class="moon-data">
+			<span data-bind="text:moonphase"></span>
+			<img data-bind="attr:{src: moonIcon}"/>
+			<span data-bind="textinput:timeMoonUp"></span>
+			<span data-bind="textinput:timeMoonDown"></span>
+		</div>
+
+		<div class="sun-data">
+			<input type="text" id="timeSunUp" data-bind="textinput:timeSunUp"></span>
+			<input type="text" id="timeSunDown" data-bind="textinput:timeSunDown"></span>
+			<input type="text" id="cloudCover" data-bind="textinput:cloudCover" />
+		</div>
+
+		<img id="solunarRating" data-bind="attr:{src: solunarRating}"/>
+
+		<input type="text" id="waterLevel" data-bind="textinput:waterLevel" />
+
+	</div>
+
+</div>

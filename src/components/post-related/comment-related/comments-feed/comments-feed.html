@@ -1,0 +1,5 @@
+<create-comment params="{huntId: id, callback:commentsRequest}" class="create-comment"></create-comment>
+
+<div class="comments-feed" data-bind="foreach: comments">
+	<comment params="comment: $data, huntUserId: $parent.huntUserId"></comment>
+</div>

@@ -1,0 +1,90 @@
+.card {
+	
+}
+.tag-user-card {
+	//background-color: #ececec;
+	margin-top: 3px;
+	margin-bottom: 2px;
+	overflow: hidden;
+	// -webkit-box-shadow: 1px 1px 1px 0px $dim;
+	// -moz-box-shadow: 1px 1px 1px 0px $dim;
+	// box-shadow: 1px 1px 1px 0px $dim;
+	padding:10px 15px;
+	cursor:pointer;
+	border: 1px solid #eee;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	&:hover {
+		background-color: #eee;
+	}
+
+
+	&.selected {
+		border-right: 2px solid $kalachiRed;
+		background-color: #efefef;
+
+		.full-name{
+			color: $kalachiRed;
+		}
+
+		.add-or-remove .fa{
+			color: $kalachiRed;
+		}
+	}
+
+
+	.avatarWrapper {
+		height: 45px;
+		width: 45px;
+		position: relative;
+		border: 1px solid #fff;
+		float:left;
+		display:inline;
+		padding-top: 0px;
+	}
+
+	.user-name-and-handle {
+		padding-top:3px;
+		float:left;
+		display:inline;
+		margin-left:20px;
+	}
+
+	.full-name {
+		color: #555;
+		font-size: 15px;
+	}
+	.handle {
+		color: #777;
+		font-size: 12px;
+	}
+
+	.add-or-remove {
+		float:left;
+		padding: 5px 15px 0px 10px;
+
+	}
+
+	.add-or-remove .fa{
+		font-size: 20px;
+		line-height: 2em;
+		color: #ddd;
+	}
+
+}
+
+.tag-weapon-card {
+
+
+	.btn-delete-weapon {
+		display: none;
+		position: absolute;
+		right: 10px;
+	}
+
+	&:hover .btn-delete-weapon {
+		display: block;
+	}
+}

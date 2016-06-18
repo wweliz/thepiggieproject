@@ -1,0 +1,18 @@
+<div class="search-results groups-search-results">
+
+	<title data-bind="pageTitle: 'Search Reults for Groups' "></title>
+	
+	<div data-bind="ifnot:feedError">
+		<div class="row club-feed-container" data-bind="foreach: allClubs">
+			<club params="{club:$data}" class="col-md-4 col-sm-6 small-gutter"></club>
+		</div>
+	</div>
+
+	<div data-bind="if:feedError">
+		<div class="well text-center">
+			<h3>No Results Found</h3>
+			<span>We were unable to find any groups that match your search.</span>
+		</div>
+	</div>
+
+</div>

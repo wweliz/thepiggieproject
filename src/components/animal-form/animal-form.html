@@ -1,0 +1,44 @@
+<!-- ko if:showDetails -->
+    <div class="animal-form">
+
+        <!-- ko with:kill -->
+            <button data-bind="click:$parent.remove" style="float:right;" class="btn btn-close"><span class="glyphicon glyphicon-remove" ></span></button>
+        <!-- /ko -->
+        <!-- ko if:speciesList().length > 0 -->
+            <h4>Select your Type of Game</h4>
+            <span class="dropdown link">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                        <span data-bind="text:kill.selectedSpecieName"></span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu scrollable-menu" role="menu" data-bind="foreach:speciesList">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" data-bind="text:$data.name, click:$parent.kill.selectedSpecie"></a></li>
+                    </ul>
+                </span>
+        <!-- /ko -->
+        <!-- ko if:typeof kill.selectedSpecie() == 'object' -->
+            <h4>Select your Species (Optional)</h4>   
+            <dropdown class="link" params="options:kill.selectedSpecie().subSpecies,selected:kill.selectedSubSpecie"></dropdown>
+
+            <!-- ~~~~~~~~~~~~~~~Kill Quantity ~~~~~~~~~~~~~~~~~~ -->
+            <dropdown params="selected:kill.quantity,options:minMaxQty,label:'Quantity'"></dropdown>
+            <div class="clr"></div>
+            <!-- ko if: showMeta() -->
+
+                <!-- ko foreach:formInput -->
+                    <!-- ko component: {name:$data.name, params:{data:$data,tooltip:$parent.tooltip}} -->
+                    <!-- /ko -->
+
+                <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko if: !showMeta() -->
+                <div class="well alert alert-info">
+                    <strong>No luck on this outting?</strong> That's ok! Hembow can still store your data for this trip.
+                </div>
+            <!-- /ko -->
+
+
+            <tooltip params="data:tooltip"></tooltip>
+        <!-- /ko -->
+    </div>
+<!-- /ko -->

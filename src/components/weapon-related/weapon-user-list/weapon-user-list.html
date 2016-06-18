@@ -1,0 +1,9 @@
+<!-- ko foreach: weapons -->
+	<user-weapon-tag params="weapon:$data,
+		selectedWeapon:$parent.selectedWeapon, 
+		selectable: false, 
+		alertText: $parent.alertText,
+        alertClass: $parent.alertClass,
+        deleteWeapon: true">
+    </user-weapon-tag>
+<!--/ko -->
